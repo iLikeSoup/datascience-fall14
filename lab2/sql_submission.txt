@@ -1,0 +1,295 @@
+SQL Assignment Submission
+
+=== 1
+select p.name
+from events e, individualmedals i, players p
+where e.name like '%110m Hurdles Men%' 
+and e.olympic_id like 'SYD2000'
+and e.event_id = i.event_id
+and i.player_id = p.player_id;
+**************** RESULT ***************************************************************
+                   name                   
+------------------------------------------
+ Anier Garcia                            
+ Terrence Trammell                       
+ Mark Crear                              
+(3 rows)
+=============================================================================================
+
+=== 2
+with temp1 as
+(select substr(p.name,1,1) in ('A', 'E', 'I', 'O', 'U') as vowels from players p)
+select count(temp1.vowels) from temp1 where temp1.vowels = true;
+**************** RESULT ***************************************************************
+ count 
+-------
+    84
+(1 row)
+=============================================================================================
+
+=== 3
+select count(*) from events
+where olympic_id like '%2000%' and result_noted_in like '%points%';
+**************** RESULT ***************************************************************
+ count 
+-------
+     2
+(1 row)
+=============================================================================================
+
+=== 4
+with t as (
+	select country_id, count(country_id) as num_medals
+	from individualmedals 
+	group by country_id)
+select name, t.num_medals, c.population, t.num_medals::real/c.population::real as medal_to_population_ratio
+from countries c, t
+where c.country_id = t.country_id
+order by medal_to_population_ratio ASC
+limit 5;
+**************** RESULT ***************************************************************
+                   name                   | num_medals | population | medal_to_population_ratio 
+------------------------------------------+------------+------------+---------------------------
+ China                                    |          4 | 1323324000 |               3.02269e-09
+ Brazil                                   |          1 |  186404900 |               5.36467e-09
+ Nigeria                                  |          1 |  131529700 |               7.60285e-09
+ Turkey                                   |          1 |   70586256 |               1.41671e-08
+ Argentina                                |          1 |   38747150 |               2.58083e-08
+(5 rows)
+=============================================================================================
+
+=== 5
+with t as (
+	select country_id, count(1) 
+	from players
+	group by country_id)
+select c.name as country_name, t.count as num_players
+from countries c, t
+where c.country_id = t.country_id;
+**************** RESULT ***************************************************************
+               country_name               | num_players 
+------------------------------------------+-------------
+ Algeria                                  |           4
+ Argentina                                |           1
+ Australia                                |          34
+ Austria                                  |           2
+ The Bahamas                              |           5
+ Barbados                                 |           1
+ Belarus                                  |           7
+ Brazil                                   |           9
+ Bulgaria                                 |           1
+ Canada                                   |           1
+ China                                    |           8
+ Cameroon                                 |           1
+ Costa Rica                               |           1
+ Croatia                                  |           1
+ Cuba                                     |          12
+ Czech Republic                           |           3
+ Denmark                                  |           2
+ Dominican Republic                       |           1
+ Eritrea                                  |           1
+ Spain                                    |           4
+ Estonia                                  |           2
+ Ethiopia                                 |          12
+ Finland                                  |           1
+ France                                   |          10
+ United Kingdom                           |          12
+ Germany                                  |          22
+...(truncated for space purposes)
+=============================================================================================
+
+=== 6
+select *
+from players
+where name ~ 'd\s{2,}'
+order by country_id ASC, birthdate DESC;
+**************** RESULT ***************************************************************
+                   name                   | player_id  | country_id | birthdate  
+------------------------------------------+------------+------------+------------
+ Abderrahmane Hammad                      | HAMMAABD01 | ALG        | 1980-10-04
+ Mark Ormrod                              | ORMROMAR01 | AUS        | 1973-10-26
+ Yunaika Crawford                         | CRAWFYUN01 | CUB        | 1981-12-09
+ Lars Conrad                              | CONRALAR01 | GER        | 1980-09-04
+ Beverly McDonald                         | MCDONBEV01 | JAM        | 1978-07-21
+ Michael Blackwood                        | BLACKMIC02 | JAM        | 1977-08-05
+ Pieter van den Hoogenband                | VANDEPIE02 | NED        | 1974-07-06
+ Trine Hattestad                          | HATTETRI01 | NOR        | 1972-02-04
+ Darian Townsend                          | TOWNSDAR01 | RSA        | 1975-08-06
+ BJ Bedford                               | BEDFOBJ01  | USA        | 1981-04-08
+ Amanda Beard                             | BEARDAMA01 | USA        | 1980-10-22
+ Shawn Crawford                           | CRAWFSHA02 | USA        | 1978-11-20
+ Jon Drummond                             | DRUMMJON01 | USA        | 1972-01-13
+(13 rows)
+=============================================================================================
+
+=== 7
+with t1 as (
+	select substring(birthdate::text from 1 for 4) as birthyear, count(1) as num_players
+	from players
+	group by birthyear
+), t2 as (
+	select substring(birthdate::text from 1 for 4) as birthyear, count(1) as num_gold_medals
+	from individualmedals i, players p
+	where i.medal like '%GOLD%'
+	and i.player_id = p.player_id
+	group by birthyear)
+select t1.birthyear, t1.num_players, t2.num_gold_medals
+from t1, t2
+where t1.birthyear = t2.birthyear;
+**************** RESULT ***************************************************************
+ birthyear | num_players | num_gold_medals 
+-----------+-------------+-----------------
+ 1985      |          36 |              15
+ 1979      |          36 |               7
+ 1973      |          31 |               9
+ 1980      |          29 |               9
+ 1981      |          22 |               4
+ 1983      |          23 |               3
+ 1975      |          32 |              11
+ 1974      |          31 |               7
+ 1971      |          45 |               9
+ 1977      |          26 |               6
+ 1978      |          40 |              19
+ 1984      |          30 |               9
+ 1982      |          19 |               9
+ 1976      |          24 |              13
+ 1972      |          29 |               7
+(15 rows)
+=============================================================================================
+
+=== 8
+with t as (
+	select e.name, e.event_id, medal, result
+	from results r, events e
+	where e.is_team_event = 0 and e.event_id = r.event_id 
+	and (medal, result) in
+	(select medal, result
+	from results
+	group by medal, result
+	having count(1) > 1))
+select *
+from t
+where (event_id) in
+(select event_id
+from t
+group by event_id
+having count(1) > 1)
+and medal like '%GOLD%';
+**************** RESULT ***************************************************************
+                   name                   | event_id |  medal  | result 
+------------------------------------------+----------+---------+--------
+ 50m Freestyle Men                        | E108     | GOLD    |  21.98
+ 50m Freestyle Men                        | E108     | GOLD    |  21.98
+(2 rows)
+=============================================================================================
+
+=== 9
+with t as (
+	select event_id
+	from events
+	where name like '%Butterfly%'
+), t2 as (
+	select i.event_id, medal, result
+	from individualmedals i, t
+	where i.event_id = t.event_id
+	and (medal like '%GOLD%')
+), t3 as (
+	select i.event_id, medal, result
+	from individualmedals i, t
+	where i.event_id = t.event_id
+	and (medal like '%SILVER%'))
+select t2.event_id, t3.result::real - t2.result::real as difference 
+from t2, t3
+where t2.event_id = t3.event_id;
+**************** RESULT ***************************************************************
+ event_id | difference 
+----------+------------
+ E14      |       0.18
+ E44      |   0.410004
+ E16      |       1.36
+ E46      |   0.700005
+ E13      |  0.0400009
+ E43      |   0.519997
+ E15      |       0.32
+ E45      |   0.309998
+(8 rows)
+=============================================================================================
+
+=== 10
+olympics=# create table TeamMedals as
+olympics-# select distinct country_id, e.event_id, medal, result
+olympics-# from results r, events e, players p
+olympics-# where r.event_id = e.event_id
+olympics-# and is_team_event = 1
+olympics-# and p.player_id = r.player_id;
+**************** RESULT ***************************************************************
+SELECT 60
+...(after performing the following query: select * from TeamMedals;)
+ country_id | event_id |  medal  | result 
+------------+----------+---------+--------
+ AUS        | E88      | SILVER  | 241.59
+ NED        | E81      | SILVER  | 194.36
+ RUS        | E99      | SILVER  | 200.16
+ AUS        | E94      | GOLD    | 427.05
+ GER        | E85      | SILVER  | 213.62
+ USA        | E95      | GOLD    | 473.42
+ AUS        | E93      | SILVER  | 427.46
+ NED        | E84      | SILVER  | 219.83
+ JAM        | E98      | BRONZE  | 178.78
+ JPN        | E85      | BRONZE  | 215.22
+ USA        | E90      | GOLD    |  37.61
+ USA        | E94      | SILVER  | 432.64
+ GER        | E86      | BRONZE  | 215.88
+ BRA        | E90      | SILVER  |   37.9
+ GER        | E95      | BRONZE  | 477.35
+ RSA        | E81      | GOLD    | 193.17
+ USA        | E88      | GOLD    |  238.3
+ USA        | E99      | GOLD    | 199.01
+ AUS        | E97      | SILVER  |  180.6
+
+=============================================================================================
+
+=== 11
+with t as (
+	select c.country_id
+	from countries c, players p
+	where c.country_id = p.country_id
+	and extract(year from p.birthdate) = 1975)
+select c.name, count(t.country_id)
+from countries c left outer join t on c.country_id = t.country_id
+group by c.name;
+**************** RESULT ***************************************************************
+                   name                   | count 
+------------------------------------------+-------
+ Costa Rica                               |     0
+ Eritrea                                  |     1
+ Estonia                                  |     1
+ Latvia                                   |     0
+ Turkey                                   |     0
+ Germany                                  |     1
+ France                                   |     0
+ Algeria                                  |     0
+ Slovenia                                 |     0
+ Japan                                    |     3
+ Jamaica                                  |     1
+ Spain                                    |     0
+ Ukraine                                  |     0
+ Belarus                                  |     1
+ Cameroon                                 |     0
+ Zimbabwe                                 |     0
+ Ireland                                  |     0
+ Saudi Arabia                             |     0
+ Denmark                                  |     1
+ Russia                                   |     0
+ Iceland                                  |     0
+ Lithuania                                |     1
+ Netherlands                              |     0
+ Portugal                                 |     0
+ Barbados                                 |     0
+ Nigeria                                  |     0
+ Romania                                  |     1
+ The Bahamas                              |     0
+ Dominican Republic                       |     0
+ Trinidad and Tobago                      |     0
+...(truncated for space)
+=============================================================================================
