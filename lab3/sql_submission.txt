@@ -1,0 +1,93 @@
+SQL Assignment Submission
+
+=== 1
+create view NumberOfMedals as
+	select c.name, count(p.country_id) as count
+	from players p, results r, countries c
+	where p.player_id = r.player_id and c.country_id = p.country_id
+	group by p.country_id, c.name;
+select * from NumberOfMedals;
+**************** RESULT ***************************************************************
+                   name                   | count 
+------------------------------------------+-------
+ Zimbabwe                                 |     3
+ Belarus                                  |     8
+ France                                   |    12
+ Kazakhstan                               |     2
+ Austria                                  |     3
+ Mexico                                   |     3
+ Czech Republic                           |     4
+ Estonia                                  |     2
+ Eritrea                                  |     1
+ Turkey                                   |     1
+ Greece                                   |     9
+ Jamaica                                  |    29
+ Dominican Republic                       |     1
+ Denmark                                  |     3
+ Barbados                                 |     1
+ Romania                                  |    13
+ Spain                                    |     4
+ Netherlands                              |    27
+ Argentina                                |     1
+ Slovakia                                 |     2
+ Kenya                                    |    14
+ Japan                                    |    21
+ Finland                                  |     1
+ Hungary                                  |     4
+ Poland                                   |     9
+ United Kingdom                           |    15
+ Saudi Arabia                             |     1
+ Brazil                                   |     9
+ Latvia                                   |     2
+ Trinidad and Tobago                      |     3
+ Morocco                                  |     7
+ China                                    |     8
+ Canada                                   |     1
+ Slovenia                                 |     1
+ Lithuania                                |     3
+ Ireland                                  |     1
+=============================================================================================
+
+=== 2
+a)
+select R.a, R.b, S.c, S.d
+from R inner join S on R.c = S.c or (R.c is null and S.c is null);
+
+b)
+select R.a, R.b, R.c, S.c
+from R inner join S on R.c is null and S.c is null;
+
+select R.c, S.c, S.c, S.d
+from R inner join S on R.c is null and S.c is null;
+**************** RESULT ***************************************************************
+a)
+     a      | b  | c  |     d      
+------------+----+----+------------
+ a3         | 30 | 30 | d1        
+ a4         |  0 |    | d2        
+(2 rows)
+
+b)
+     a      | b | c | c 
+------------+---+---+---
+ a4         | 0 |   |  
+(1 row)
+
+ c | c | c |     d      
+---+---+---+------------
+   |   |   | d2        
+(1 row)
+=============================================================================================
+
+=== 3
+<INSERT YOUR QUERY HERE>
+**************** RESULT ***************************************************************
+<INSERT YOUR RESULT HERE>
+=============================================================================================
+
+=== 4
+<INSERT YOUR QUERY HERE>
+**************** RESULT ***************************************************************
+<INSERT YOUR RESULT HERE>
+=============================================================================================
+
