@@ -130,8 +130,90 @@ select * from teammedals where event_id like '%E1000%';
 =============================================================================================
 
 === 4
-<INSERT YOUR QUERY HERE>
+CREATE OR REPLACE FUNCTION gen_xml() RETURNS text AS $xml$
+DECLARE
+  curr record;
+  prev record;
+  result text := E'<medal>\n';
+  prev_null_check integer := 0;
+  currInPlayersBlock integer := 0;
+BEGIN
+  FOR curr in
+    select e.name as event, p.name as player
+    from events e, results r, players p
+    where e.olympic_id like '%ATH2004%'
+    and r.medal like '%GOLD%'
+    and e.event_id = r.event_id
+    and r.player_id = p.player_id
+    and p.country_id like '%USA%' LOOP
+      IF prev_null_check = 0 THEN
+	result := result || E'\t<event>' || curr.event || E'</event>\n';
+        prev_null_check := 1;
+      ELSE
+        IF prev.event = curr.event THEN
+          IF currInPlayersBlock = 0 THEN
+            currInPlayersBlock := 1;
+            result := result || E'\t<players>\n';
+          END IF;
+          result := result || E'\t\t<player>' || prev.player || E'</player>\n';
+        ELSE
+          IF currInPlayersBlock = 1 THEN
+            currInPlayersBlock := 0;
+            result := result || E'\t\t<player>' || prev.player || E'</player>\n';
+            result := result || E'\t</players>\n';
+          ELSE
+            result := result || E'\t<player>' || prev.player || E'</player>\n';
+          END IF;
+          result := result || E'</medal>\n<medal>\n\t<event>' || curr.event || E'</event>\n';
+        END IF;
+      END IF;
+    prev := curr;
+  END LOOP;
+
+  return result;
+END $xml$
+LANGUAGE plpgsql;
 **************** RESULT ***************************************************************
-<INSERT YOUR RESULT HERE>
+                       gen_xml                       
+-----------------------------------------------------
+ <medal>                                            +
+         <event>100m Men</event>                    +
+         <player>Justin Gatlin</player>             +
+ </medal>                                           +
+ <medal>                                            +
+         <event>200m Men</event>                    +
+         <player>Shawn Crawford</player>            +
+ </medal>                                           +
+ <medal>                                            +
+         <event>400m Men</event>                    +
+         <player>Jeremy Wariner</player>            +
+ </medal>                                           +
+ <medal>                                            +
+         <event>4x400m Relay Men</event>            +
+         <players>                                  +
+                 <player>Jeremy Wariner</player>    +
+                 <player>Darold Williamson</player> +
+                 <player>Otis Harris Jr</player>    +
+                 <player>Derrick Brew</player>      +
+         </players>                                 +
+ </medal>                                           +
+ <medal>                                            +
+         <event>Pole Vault Men</event>              +
+         <player>Timothy Mack</player>              +
+ </medal>                                           +
+ <medal>                                            +
+         <event>Long Jump Men</event>               +
+         <player>Dwight Phillips</player>           +
+ </medal>                                           +
+ <medal>                                            +
+         <event>100m Hurdles Women</event>          +
+         <player>Joanna Hayes</player>              +
+ </medal>                                           +
+ <medal>                                            +
+         <event>4x400m Relay Women</event>          +
+         <players>                                  +
+                 <player>Deedee Trotter</player>    +
+                 <player>Sanya Richards</player>    +
+                 <player>Monique Henderson</player> +
 =============================================================================================
 
