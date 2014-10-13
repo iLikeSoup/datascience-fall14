@@ -80,9 +80,53 @@ b)
 =============================================================================================
 
 === 3
-<INSERT YOUR QUERY HERE>
+CREATE OR REPLACE FUNCTION insert_teammedals() RETURNS TRIGGER AS $_$
+DECLARE
+  ret_val record;
+  already_exist record;
+BEGIN
+  select country_id, e.event_id, new.medal, new.result
+  into ret_val
+  from events e, players p, results r
+  where e.event_id = new.event_id 
+  and e.is_team_event = 1 
+  and p.player_id = new.player_id;
+
+  IF FOUND THEN
+    select * into already_exist from teammedals t
+    where t.country_id = ret_val.country_id and t.event_id = ret_val.event_id
+    and t.medal = ret_val.medal and t.result = ret_val.result;
+    IF FOUND THEN
+      --raise notice 'Found: %', already_exist;
+    ELSE
+      --raise notice 'Not Found';
+      insert into teammedals values
+      (ret_val.country_id, ret_val.event_id, ret_val.medal, ret_val.result);
+    END IF;
+  END IF;
+  RETURN NEW;
+END;
+$_$ LANGUAGE plpgsql;
+
+create trigger update_teammedals
+	after insert on results
+	for each row
+	execute procedure insert_teammedals();
 **************** RESULT ***************************************************************
-<INSERT YOUR RESULT HERE>
+// Prep the other tables
+insert into events values ('E1000', 'test event', 'TEST', 'SYD2000', 1, 4, 'TESTING');
+insert into players values ('TEST 01', 'TEST01', 'USA', '1978-04-21');
+insert into players values ('TEST 02', 'TEST02', 'USA', '1978-04-21');
+// Insert into results table
+insert into results values ('E1000', 'TEST01', 'GOLD', 0.0);
+insert into results values ('E1000', 'TEST02', 'GOLD', 0.0);
+// Display results table
+select * from teammedals where event_id like '%E1000%';
+
+ country_id | event_id |  medal  | result 
+------------+----------+---------+--------
+ USA        | E1000    | GOLD    |      0
+(1 row)
 =============================================================================================
 
 === 4
