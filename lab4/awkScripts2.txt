@@ -1,7 +1,1 @@
-cat worldcup.txt | sed 's/FIFA//g' | sed 's/[\{\}\|\(\)]//g' | sed 's/fb//g' | sed 's/style=\"background:#fff68f\"//g' | sed 's/<sup>//g' | sed 's/<\/sup>//g' | sed 's/\[\[#[0-9].\]\]//g' | sed 's/style=white-space:nowrap//g' | awk -F'[, \[]' '/[0-9] \[\[[0-9][0-9][0-9][0-9]/ {print $1, $2, $3, $4;}' | less
-
-country
-'/[A-Z][A-Z][A-Z]/ {country = $1} /./ {print $0, country}'
-
-rank year
-awk -F'[, \[]' '/[0-9] \[\[[0-9][0-9][0-9][0-9]/ {print $1, $2, $3, $4;}'
+cat worldcup.txt | sed 's/FIFA//g' | sed 's/[\{\}\|\(\)]//g' | sed 's/fb//g' | sed 's/style=\"background:#fff68f\"//g' | sed 's/<sup>//g' | sed 's/<\/sup>//g' | sed 's/\[\[#[0-9].\]\]//g' | sed 's/style=white-space:nowrap//g' | awk -F'[, \[]' 'BEGIN {place = 0;} /[A-Z][A-Z][A-Z]/ {coun = $1;} /[0-9] \[\[([0-9][0-9][0-9][0-9])*/ { if (place == 4) place = 1; else place = place + 1; if (length($4) != 0) print coun, $4, place; if (length($11) != 0) print coun, $11, place; if (length($18) != 0) print coun, $18, place; if (length($25) != 0) print coun, $25, place; if (length($32) != 0) print coun, $32, place;}' | less
