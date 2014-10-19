@@ -1,0 +1,21 @@
+cat cmsc.txt | awk -F'[ ,\)]' 'BEGIN {print "Course No. | Section No. | Instructor | Seats | Open | Waitlist | Days | Time | Bldg. | Room No."}
+
+course no.
+'/^CMSC[0-9][0-9][0-9]$/ {print $1;}'
+
+section no.
+'/^[0-9][0-9][0-9][0-9]$/ {print $0;}'
+
+instructor
+'/^[-A-Za-z]+( [-A-Za-z]+)$*/ {print $0;}'
+
+seats open waitlist
+'/^Seats \(Total: [0-9]+, Open: [0-9]+, Waitlist: [0-9]+\)$/ {print $3, $6, $9;}'
+
+days (1) time (2-4)
+'/^[MWFTuh]+ [0-9]+:[0-9]+/ {print $1, $2, $3, $4;}'
+
+bldg room
+'/^[A-Z]+  [0-9][0-9][0-9][0-9]$/ {print $1, $3;}'
+
+cat cmsc.txt | awk -F'[ ,\)]' 'BEGIN {print "Course No.,\tSection No.\tInstructor\tSeats\tOpen\tWaitlist\tDays    Time\t\t\tBldg.\tRoom No."} /^CMSC[0-9][0-9][0-9]$/ {print $1;} /^[0-9][0-9][0-9][0-9]$/ {print "\t\t", $0;} /^[-A-Za-z]+( [-A-Za-z]+)$*/ {print "\t\t\t\t", $0;} /^Seats \(Total: [0-9]+, Open: [0-9]+, Waitlist: [0-9]+\)$/ {print "\t\t\t\t\t\t", $3, "\t", $6, "\t", $9;} /^[MWFTuh]+ [0-9]+:[0-9]+/ {print "\t\t\t\t\t\t\t\t\t\t", $1, "    ", $2, $3, $4;} /^[A-Z]+  [0-9][0-9][0-9][0-9]$/ {print "\t\t\t\t\t\t\t\t\t\t\t\t\t\t", $1, "\t", $3;}' | less
