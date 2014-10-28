@@ -1,0 +1,4 @@
+My algorithm had a precision of 0.365384615385
+My algorithm had a recall of 0.0171790235081
+
+I used 4 fields to test: manufacturer, title, price, and description. For manufacturer and title, I used dedupe's default String comparator. I made my own custom price comparator (I used regex to extract the numeric price values). I used dedupe's default Text comparator for the description field.
