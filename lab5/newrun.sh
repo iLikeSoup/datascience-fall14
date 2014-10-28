@@ -1,0 +1,1 @@
+rm products_learned_settings products_out.csv products_training.json
