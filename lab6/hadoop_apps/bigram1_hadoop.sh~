@@ -1,0 +1,3 @@
+hadoop fs -mkdir bigram1
+hadoop fs -mkdir bigram1/input
+hadoop fs -put $1 bigram1/input/
