@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.regex.*;
 
 import java.io.IOException;
 import java.util.*;
@@ -47,60 +48,62 @@ public static class Reduce extends MapReduceBase implements Reducer<Text, Text, 
     private Text my_value = new Text();
 
     public void reduce(Text key, Iterator<Text> values, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
-	
+	HashMap<String, Integer> my_map = new HashMap<String, Integer>();
 	String v = "";
 	while (values.hasNext()) {
 		v += values.next();
-		if (values.hasNext()) {
-			v += " ";
-		}
+		v += "|";
 	}
-	HashMap<String, Integer> my_map = new HashMap<String, Integer>();
 
-	/*while (values.hasNext()) {
-		String k = values.next().toString();
-		String delim[] = k.split("[\\d]+$");
-		my_map.put(delim[0] + " " + delim[1], Integer.parseInt(delim[2]));
+	/* This works in normal java, but for some reason not hadoop....@#%$@%!@$##!@$
+	String v_arr[] = v.split("\\|");
+	for (String tmp : v_arr) {
+		Matcher matcher = Pattern.compile("(.+)([\\d]$)").matcher(tmp);
+		if (matcher.find()) {
+			my_map.put(matcher.group(1).trim(), Integer.parseInt(matcher.group(2)));
+		}
 	}*/
+	
+	int min = -1;
+	ArrayList<String> top5 = new ArrayList<String>();
+	String minBigram = null;
+	int pipe = -1;
+	int count = 0;
 
-	//if (delimeter.length > 1) {
-		//for (int i = 0; i < delimeter.length; i += 3) {
-		//		my_map.put(delimeter[i] + " " + delimeter[i + 1], Integer.parseInt(delimeter[i + 2]));
-		//}
+	while ((pipe = v.indexOf("|")) != -1) {
+		String bigram = v.substring(0, pipe);
 
-		int min = -1;
-		HashSet<String> top5 = new HashSet<String>();
-		String minBigram = null;
-
-		for (String bigram : my_map.keySet()) {
-			// If we found an element with a higher count than the lowest element in the current top 5
-			if (my_map.get(bigram) > min) {
-				// If we need to replace an element with the new top 5 member
-				if (top5.size() == 5) {
-					top5.remove(minBigram);
-				}
-				// New lowest member of the top 5
-				min = my_map.get(bigram);
-				minBigram = bigram;
-				// Add to set
-				top5.add(bigram);
+		try {
+			count = Integer.parseInt(bigram.substring(bigram.length() - 1));
+			//count = Integer.parseInt(v);
+		} catch (NumberFormatException e){
+			count = Integer.parseInt(v);
+		}
+		//int count = Integer.parseInt(v.substring(pipe+1));
+		if (count >= min) {
+			if (top5.size() == 5) {
+				top5.remove(minBigram);
 			}
+			// New lowest member of the top 5
+			min = count;
+			minBigram = bigram;
+			// Add to set
+			top5.add(bigram);
+	
 		}
-		
-		String tostr = "";
-		for (String b : top5) {
-			tostr += (b + " ");
-		}
-		my_value.set(tostr);
-		output.collect(key, my_value);
-	//} else {
-		/*String tostr = "ERROR (len=" + String.valueOf(delimeter.length) + ")\t";
-		for (String b : delimeter) {
-			tostr += (b + " ");
-		}
-		my_value.set(tostr);
-		output.collect(key, my_value);		*/
-	//}
+		v = v.substring(pipe + 1);
+	}
+	
+	String tostr = "";
+	for (String b : top5) {
+		//tostr += (b + "~~~" + String.valueOf(my_map.get(b)) + "\n");
+		tostr += (b + " ");
+	}
+	tostr = tostr.trim();
+	//tostr += null;
+
+	my_value.set(tostr);
+	output.collect(key, my_value);
     }
 }
 
@@ -124,4 +127,3 @@ public static class Reduce extends MapReduceBase implements Reducer<Text, Text, 
      JobClient.runJob(conf);
    }
 }
-
