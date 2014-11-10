@@ -95,11 +95,11 @@ public static class Reduce extends MapReduceBase implements Reducer<Text, Text, 
 	}
 	
 	String tostr = "";
-	for (String b : top5) {
+	for (int i = 0; i < top5.size() - 2; i++) {
 		//tostr += (b + "~~~" + String.valueOf(my_map.get(b)) + "\n");
-		tostr += (b + " ");
+		tostr += (top5.get(i) + ", ");
 	}
-	tostr = tostr.trim();
+	tostr += top5.get(top5.size() - 1);
 	//tostr += null;
 
 	my_value.set(tostr);
