@@ -1,0 +1,67 @@
+---Create Cassandra database---
+
+CREATE KEYSPACE korra
+WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' :1 };
+
+USE korra;
+
+CREATE TABLE denormalized (
+    OwnerId int,
+    AdId int,
+    numClicks int,
+    numImpressions int,
+    PRIMARY KEY (OwnerId, AdId)
+);
+
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (3, 4, 1, 36);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (3, 3, 2, 44);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (3, 2, 0, 23);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (3, 1, 1, 32);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (2, 4, 0, 21);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (2, 3, 0, 13);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (2, 2, 0, 55);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (2, 1, 0, 10);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (1, 4, 0, 15);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (1, 3, 1, 20);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (1, 2, 0, 5);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (1, 1, 1, 10);
+
+
+---CQL Queries---
+1. Find the numClicks for OwnerId = 1, AdId = 3.
+
+	*******************************************
+	select numClicks from denormalized where OwnerId = 1 and AdId = 3;
+	*******************************************
+	Output
+	*******************************************
+	 numclicks
+	-----------
+		 0
+		 0
+		 0
+		 0
+
+2. Find the numClicks for OwnerId = 2.
+
+	*******************************************
+	select numClicks from denormalized where OwnerId = 2;
+	*******************************************
+	Output
+	*******************************************
+	 numclicks
+	-----------
+		 1
+
