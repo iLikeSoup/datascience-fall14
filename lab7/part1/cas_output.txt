@@ -1,0 +1,25 @@
+**********Printing query 1*****************
+(OwnerId: 1, AdId: 1) --- 0.1
+(OwnerId: 1, AdId: 2) --- 0.0
+(OwnerId: 1, AdId: 3) --- 0.05
+(OwnerId: 1, AdId: 4) --- 0.0
+(OwnerId: 2, AdId: 1) --- 0.0
+(OwnerId: 2, AdId: 2) --- 0.0
+(OwnerId: 2, AdId: 3) --- 0.0
+(OwnerId: 2, AdId: 4) --- 0.0
+(OwnerId: 3, AdId: 1) --- 0.03125
+(OwnerId: 3, AdId: 2) --- 0.0
+(OwnerId: 3, AdId: 3) --- 0.0454545454545
+(OwnerId: 3, AdId: 4) --- 0.0277777777778
+
+**********Printing query 2*****************
+(OwnerId: 1) --- 0.15
+(OwnerId: 2) --- 0.0
+(OwnerId: 3) --- 0.104482323232
+
+**********Printing query 3*****************
+(OwnerId: 1, AdId: 3) --- 0.05
+
+**********Printing query 4*****************
+(OwnerId: 2) --- 0.0
+
