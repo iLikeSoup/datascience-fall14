@@ -1,24 +1,423 @@
 ===================== Cassandra: CQL Queries and Results
+---Create Cassandra database---
+
+CREATE KEYSPACE korra
+WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' :1 };
+
+USE korra;
+
+CREATE TABLE denormalized (
+    OwnerId int,
+    AdId int,
+    numClicks int,
+    numImpressions int,
+    PRIMARY KEY (OwnerId, AdId)
+);
+
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (3, 4, 1, 36);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (3, 3, 2, 44);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (3, 2, 0, 23);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (3, 1, 1, 32);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (2, 4, 0, 21);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (2, 3, 0, 13);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (2, 2, 0, 55);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (2, 1, 0, 10);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (1, 4, 0, 15);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (1, 3, 1, 20);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (1, 2, 0, 5);
+INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (1, 1, 1, 10);
+
+
+---CQL Queries---
+1. Find the numClicks for OwnerId = 1, AdId = 3.
+
+	*******************************************
+	select numClicks from denormalized where OwnerId = 1 and AdId = 3;
+	*******************************************
+	Output
+	*******************************************
+	 numclicks
+	-----------
+		 0
+		 0
+		 0
+		 0
+
+2. Find the numClicks for OwnerId = 2.
+
+	*******************************************
+	select numClicks from denormalized where OwnerId = 2;
+	*******************************************
+	Output
+	*******************************************
+	 numclicks
+	-----------
+		 1
 
 
 
 
 
 ===================== Cassandra: Python Code
+#!/usr/bin/env python
+
+import logging
+
+log = logging.getLogger()
+#log.setLevel('DEBUG')
+log.setLevel('WARN')
+handler = logging.StreamHandler()
+handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
+log.addHandler(handler)
+
+from cassandra import ConsistencyLevel
+from cassandra.cluster import Cluster
+from cassandra.query import SimpleStatement
+
+KEYSPACE = "drwho"
+
+def exe(query, num):
+    print('**********Printing query {}*****************'.format(num))
+    try:
+        rows = query.result()
+    except Exception:
+        log.exception(0)
+
+    return rows
+
+
+def exe_query1(query, num):
+    rows = exe(query, num)
+    for row in rows:
+	print('(OwnerId: {}, AdId: {}) --- {}'.format(row[0], row[1], float(row[2]) / row[3]))
+    print('')	
+
+
+def exe_query2(query, num):
+    rows = exe(query, num) 
+    d = {}
+    for row in rows:
+	if d.has_key(row[0]):
+		d[row[0]] += float(row[2]) / row[3]
+	else:
+		d[row[0]] = float(row[2]) / row[3]	
+
+    if num == '2':
+	    for k,v in d.items():
+		print('(OwnerId: {}) --- {}'.format(k, v))
+    else:
+	print('(OwnerId: {}) --- {}'.format(2, d[2]))
+    print('')
+
+
+def exe_query3(query, num):
+	rows = exe(query, num)
+	for row in rows:
+		print('(OwnerId: {}, AdId: {}) --- {}'.format(row[0], row[1], float(row[2]) / row[3]))
+	print('')
+
+
+def main():
+    cluster = Cluster(['127.0.0.1'])
+    session = cluster.connect()
+
+    #session.execute("DROP KEYSPACE " + KEYSPACE)
+
+    log.info("creating keyspace...")
+    session.execute("""
+        CREATE KEYSPACE IF NOT EXISTS %s
+        WITH replication = { 'class': 'SimpleStrategy', 'replication_factor': '2' }
+        """ % KEYSPACE)
+
+    log.info("setting keyspace...")
+    session.set_keyspace(KEYSPACE)
+
+    log.info("creating table...")
+    session.execute("""
+	CREATE TABLE denormalized (
+	    OwnerId int,
+	    AdId int,
+	    numClicks int,
+	    numImpressions int,
+	    PRIMARY KEY (OwnerId, AdId)
+	)
+        """)
+
+    prepared = session.prepare("""
+        INSERT INTO denormalized (OwnerId, AdId, numClicks, numImpressions)
+        VALUES (?, ?, ?, ?)
+        """)
+
+    ins = []
+    ins.append([3, 4, 1, 36])
+    ins.append([1, 1, 1, 10])
+    ins.append([1, 2, 0, 5])
+    ins.append([1, 3, 1, 20])
+    ins.append([1, 4, 0, 15])
+    ins.append([2, 1, 0, 10])
+    ins.append([2, 2, 0, 55])
+    ins.append([2, 3, 0, 13])
+    ins.append([2, 4, 0, 21])
+    ins.append([3, 1, 1, 32])
+    ins.append([3, 2, 0, 23])
+    ins.append([3, 3, 2, 44])
+
+    for i in range(len(ins)):
+        log.info("inserting row %d" % i)
+        session.execute(prepared, (ins[i][0], ins[i][1], ins[i][2], ins[i][3]))
+
+    one = session.execute_async("select * from denormalized")
+    two = session.execute_async("select * from denormalized where OwnerId = 1 and AdId = 3")
+    exe_query1(one, '1')
+    exe_query2(one, '2')
+    exe_query3(two, '3')
+    exe_query2(one, '4')
+
+
+    session.execute("DROP KEYSPACE " + KEYSPACE)
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 
 
 
 ===================== Cassandra: Output of Running the Python Code
+**********Printing query 1*****************
+(OwnerId: 1, AdId: 1) --- 0.1
+(OwnerId: 1, AdId: 2) --- 0.0
+(OwnerId: 1, AdId: 3) --- 0.05
+(OwnerId: 1, AdId: 4) --- 0.0
+(OwnerId: 2, AdId: 1) --- 0.0
+(OwnerId: 2, AdId: 2) --- 0.0
+(OwnerId: 2, AdId: 3) --- 0.0
+(OwnerId: 2, AdId: 4) --- 0.0
+(OwnerId: 3, AdId: 1) --- 0.03125
+(OwnerId: 3, AdId: 2) --- 0.0
+(OwnerId: 3, AdId: 3) --- 0.0454545454545
+(OwnerId: 3, AdId: 4) --- 0.0277777777778
 
+**********Printing query 2*****************
+(OwnerId: 1) --- 0.15
+(OwnerId: 2) --- 0.0
+(OwnerId: 3) --- 0.104482323232
+
+**********Printing query 3*****************
+(OwnerId: 1, AdId: 3) --- 0.05
+
+**********Printing query 4*****************
+(OwnerId: 2) --- 0.0
 
 
 
 
 
 ===================== MongoDB Queries and Outputs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Import and perform single insertion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	mongoimport --db test --collection zipcodes --file zipData.json
+	db.zipcodes.insert({ "_id" : "99950", "city" : "KETCHIKAN", "loc" : [ -133.18479, 55.942471 ], "pop" : 422, "state" : "AK" });
 
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Return cities with population less than 5 million grouped by state
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	var dict = {};
+	var data = db.zipcodes.find().sort({city : 1, state : 1});
+	while ( data.hasNext() ) {
+		var next = data.next();
+		var citystate = next.city + ',' + next.state;
+		if (dict[citystate] != undefined) { 
+			//printjson(citystate + ' found');
+			dict[citystate] += next.pop;
+		} else {
+			//printjson(citystate + ' not found');
+			dict[citystate] = next.pop;
+		}
+	}
+	for (cs in dict) {
+		var s = cs.split(",");
+		var city = s[0];
+		var state = s[1];
+		db.cityPopu.insert({ "city" : city, "pop" : dict[cs], "state" :  state});
+	}
+	db.cityPopu.find({pop : {$lt: 5000000}}).sort({state : 1});
 
+	-------------------------------------------
+	Output
+	-------------------------------------------
+	{ "_id" : ObjectId("5468c71f596eb73ebbf69fae"), "city" : "AKHIOK", "pop" : 13309, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf69faf"), "city" : "AKIACHAK", "pop" : 481, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf69fb0"), "city" : "AKIAK", "pop" : 285, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf69fb8"), "city" : "AKUTAN", "pop" : 589, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf69fbb"), "city" : "ALAKANUK", "pop" : 1186, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a010"), "city" : "ALEKNAGIK", "pop" : 185, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a03e"), "city" : "ALLAKAKET", "pop" : 170, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a0ef"), "city" : "AMBLER", "pop" : 8, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a133"), "city" : "ANAKTUVUK PASS", "pop" : 260, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a138"), "city" : "ANCHORAGE", "pop" : 183987, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a142"), "city" : "ANDERSON", "pop" : 300, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a16e"), "city" : "ANGOON", "pop" : 1002, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a1ab"), "city" : "ANVIK", "pop" : 296, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a1fc"), "city" : "ARCTIC VILLAGE", "pop" : 107, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a2fc"), "city" : "ATMAUTLUAK", "pop" : 7188, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a46f"), "city" : "BARROW", "pop" : 3696, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a521"), "city" : "BEAVER", "pop" : 103, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a6b1"), "city" : "BETTLES FIELD", "pop" : 156, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a891"), "city" : "BORDER", "pop" : 1805, "state" : "AK" }
+	{ "_id" : ObjectId("5468c71f596eb73ebbf6a987"), "city" : "BREVIG MISSION", "pop" : 198, "state" : "AK" }
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Return states sorted by their total city population
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	var dict = {};
+	var data = db.cityPopu.find().sort({state : 1});
+	while ( data.hasNext() ) {
+		var next = data.next();
+		var state = next.state;
+		if (dict[state] != undefined) { 
+			dict[state] += next.pop;
+		} else {
+			dict[state] = next.pop;
+		}
+	}
+	for (s in dict) {
+		db.statePopu.insert({ "pop" : dict[s], "state" :  s});
+	}
+	db.statePopu.find().sort({ pop : -1 });
+
+	-------------------------------------------
+        Output
+        -------------------------------------------
+	{ "_id" : ObjectId("5468c734596eb73ebbf7036f"), "pop" : 29754890, "state" : "CA" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf7038d"), "pop" : 17990402, "state" : "NY" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf70396"), "pop" : 16984601, "state" : "TX" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf70374"), "pop" : 12686644, "state" : "FL" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf70391"), "pop" : 11881643, "state" : "PA" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf70379"), "pop" : 11427576, "state" : "IL" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf7038e"), "pop" : 10846517, "state" : "OH" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf70381"), "pop" : 9295297, "state" : "MI" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf7038a"), "pop" : 7730188, "state" : "NJ" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf70386"), "pop" : 6628637, "state" : "NC" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf70375"), "pop" : 6478216, "state" : "GA" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf70398"), "pop" : 6181479, "state" : "VA" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf7037e"), "pop" : 6016425, "state" : "MA" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf7037a"), "pop" : 5544136, "state" : "IN" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf70383"), "pop" : 5110648, "state" : "MO" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf7039b"), "pop" : 4891769, "state" : "WI" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf70395"), "pop" : 4876457, "state" : "TN" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf7039a"), "pop" : 4866692, "state" : "WA" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf7037f"), "pop" : 4781379, "state" : "MD" }
+	{ "_id" : ObjectId("5468c734596eb73ebbf70382"), "pop" : 4372982, "state" : "MN" }
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Return the cities with minimum population by state
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	var dict = {};
+	var data = db.cityPopu.find();
+	while ( data.hasNext() ) {
+		var next = data.next();
+		var city = next.city;
+		var state = next.state;
+		var pop = next.pop;
+		if (dict[state] != undefined) { 
+			if (pop < dict[state].pop) {
+				dict[state] = { "city" : city, "pop" : pop };
+			}
+		} else {
+			dict[state] = { "city" : city, "pop" : pop };
+		}
+	}
+	for (s in dict) {
+		db.minCity.insert({ "city" : dict[s].city, "pop" : dict[s].pop, "state" :  s});
+	}
+	db.minCity.find().sort({ state : 1 });
+
+	-------------------------------------------
+        Output
+        -------------------------------------------
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703c7"), "city" : "CHEVAK", "pop" : 0, "state" : "AK" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703a1"), "city" : "ALLEN", "pop" : 0, "state" : "AL" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703c2"), "city" : "TOMATO", "pop" : 0, "state" : "AR" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703cb"), "city" : "HUALAPAI", "pop" : 2, "state" : "AZ" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703b6"), "city" : "ALLEGHANY", "pop" : 0, "state" : "CA" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703c4"), "city" : "CHEYENNE MTN AFB", "pop" : 0, "state" : "CO" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703cd"), "city" : "EAST KILLINGLY", "pop" : 25, "state" : "CT" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703d0"), "city" : "PENTAGON", "pop" : 21, "state" : "DC" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703cf"), "city" : "BETHEL", "pop" : 108, "state" : "DE" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703c6"), "city" : "CECIL FIELD NAS", "pop" : 0, "state" : "FL" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703a0"), "city" : "FORT STEWART", "pop" : 0, "state" : "GA" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703c5"), "city" : "NINOLE", "pop" : 0, "state" : "HI" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703b9"), "city" : "DOUDS", "pop" : 15, "state" : "IA" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703b8"), "city" : "KEUTERVILLE", "pop" : 0, "state" : "ID" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703a7"), "city" : "ANCONA", "pop" : 38, "state" : "IL" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703bb"), "city" : "WESTPOINT", "pop" : 145, "state" : "IN" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703a8"), "city" : "ARNOLD", "pop" : 0, "state" : "KS" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf7039e"), "city" : "BIG LAUREL", "pop" : 0, "state" : "KY" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703b2"), "city" : "FORDOCHE", "pop" : 0, "state" : "LA" }
+	{ "_id" : ObjectId("5468c74e596eb73ebbf703b0"), "city" : "BUCKLAND", "pop" : 16, "state" : "MA" }
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Write a MapReduce operation to compute, for each state, the average population over the cities associated with the state
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	var mapFunction3 = function() {
+		var value = { pop: this.pop, count: 1 }
+		emit(this.state, value);
+	};
+	var reduceFunction3 = function(my_key, my_val) {
+		 reducedVal = { count: 0, pop: 0 };
+
+		 for (var idx = 0; idx < my_val.length; idx++) {
+		     reducedVal.count += my_val[idx].count;
+		     reducedVal.pop += my_val[idx].pop;
+		 }
+
+		 return reducedVal;
+	};
+	var finalizeFunction3 = function (key, reducedVal) {
+		reducedVal.avg = reducedVal.pop/reducedVal.count;
+		return reducedVal;
+	};
+	db.cityPopu.mapReduce(mapFunction3, reduceFunction3, { out: "map_reduce_prob", finalize: finalizeFunction3 });
+	db.map_reduce_prob.find();
+
+        -------------------------------------------
+        Output
+        -------------------------------------------
+	{ "_id" : "AK", "value" : { "count" : 183, "pop" : 544698, "avg" : 2976.4918032786886 } }
+	{ "_id" : "AL", "value" : { "count" : 511, "pop" : 4040587, "avg" : 7907.2152641878665 } }
+	{ "_id" : "AR", "value" : { "count" : 563, "pop" : 2350725, "avg" : 4175.355239786856 } }
+	{ "_id" : "AZ", "value" : { "count" : 178, "pop" : 3665228, "avg" : 20591.16853932584 } }
+	{ "_id" : "CA", "value" : { "count" : 1072, "pop" : 29754890, "avg" : 27756.42723880597 } }
+	{ "_id" : "CO", "value" : { "count" : 330, "pop" : 3293755, "avg" : 9981.075757575758 } }
+	{ "_id" : "CT", "value" : { "count" : 224, "pop" : 3287116, "avg" : 14674.625 } }
+	{ "_id" : "DC", "value" : { "count" : 2, "pop" : 606900, "avg" : 303450 } }
+	{ "_id" : "DE", "value" : { "count" : 46, "pop" : 666168, "avg" : 14481.91304347826 } }
+	{ "_id" : "FL", "value" : { "count" : 463, "pop" : 12686644, "avg" : 27400.958963282937 } }
+	{ "_id" : "GA", "value" : { "count" : 561, "pop" : 6478216, "avg" : 11547.62210338681 } }
+	{ "_id" : "HI", "value" : { "count" : 70, "pop" : 1108229, "avg" : 15831.842857142858 } }
+	{ "_id" : "IA", "value" : { "count" : 889, "pop" : 2776420, "avg" : 3123.0821147356583 } }
+	{ "_id" : "ID", "value" : { "count" : 233, "pop" : 1006749, "avg" : 4320.811158798283 } }
+	{ "_id" : "IL", "value" : { "count" : 1148, "pop" : 11427576, "avg" : 9954.334494773519 } }
+	{ "_id" : "IN", "value" : { "count" : 598, "pop" : 5544136, "avg" : 9271.130434782608 } }
+	{ "_id" : "KS", "value" : { "count" : 648, "pop" : 2475285, "avg" : 3819.884259259259 } }
+	{ "_id" : "KY", "value" : { "count" : 771, "pop" : 3675484, "avg" : 4767.164721141375 } }
+	{ "_id" : "LA", "value" : { "count" : 403, "pop" : 4217595, "avg" : 10465.496277915632 } }
+	{ "_id" : "MA", "value" : { "count" : 405, "pop" : 6016425, "avg" : 14855.37037037037 } }
 
