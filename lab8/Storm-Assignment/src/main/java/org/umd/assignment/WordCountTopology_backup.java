@@ -18,10 +18,6 @@
 
 package org.umd.assignment;
 
-import java.util.Scanner;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.StormSubmitter;
@@ -44,7 +40,7 @@ import java.util.Map;
 /**
  * This topology demonstrates Storm's stream groupings and multilang capabilities.
  */
-public class WordCountTopology {
+public class WordCountTopology_backup {
   public static class SplitSentence extends ShellBolt implements IRichBolt {
 
     public SplitSentence() {
@@ -78,19 +74,7 @@ public class WordCountTopology {
 		// ---------------------------------------------------------
 
 
-    	
 		String word = tuple.getString(0);
-    	try {
-			Scanner scan = new Scanner(new FileReader("/home/terrapin/myGithub/datascience-fall14/lab8/Stopwords.txt"));
-	    	while (scan.hasNext()) {
-	    		if (word.equals(scan.next())) {
-	    			return;
-	    		}
-	    	}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-
 		Integer count = counts.get(word);
 		if (count == null)
 			count = 0;
@@ -115,12 +99,9 @@ public class WordCountTopology {
 		//	Since multiple threads will be doing the same cleanup operation, writing the
 		//	output to a file might not work as desired. One way to do this would be
 		//  print the output (using System.out.println) and do a grep/awk/sed on that.
+		//  For a simple example see inside the runStorm.sh.
 		//
 		//--------------------------------------------------------------------------
-		// for (String s : count.keySet()) {
-		// 	System.out.println(s);
-		// }
-		System.out.println("Work!!!");
 	}
 
     @Override
@@ -143,7 +124,7 @@ public class WordCountTopology {
 	//--------------------------------------------------------------------------
 
 	// Setting up a spout
-    builder.setSpout("spout", new TwitterSampleSpout(), 3);
+    builder.setSpout("spout", new RandomSentenceSpout(), 3); //builder.setSpout("spout", new TwitterSampleSpout(), 3);
 
 	// Setting up bolts
     builder.setBolt("split", new SplitSentence(), 3).shuffleGrouping("spout");

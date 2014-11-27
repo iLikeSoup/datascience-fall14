@@ -72,8 +72,8 @@ public class TwitterSampleSpout extends BaseRichSpout {
 	//				(a) Go to apps.twitter.com
 	//				(b) Create an App [Put any website as an URL]
 	//				(c) Go to "keys and Access Token tab"
-	//				(d) Create you access token
-	//				(e) Copy over the ConsumerKey, consumerSecret, accesstoken, and accessTokenSecret
+	//				(d) Create your access token
+	//				(e) Copy over the:w ConsumerKey, consumerSecret, accesstoken, and accessTokenSecret
 	//				in the TwitterSampleSpout()
 	//
 	//	https://dev.twitter.com/oauth/overview/application-owner-access-tokens
@@ -81,12 +81,11 @@ public class TwitterSampleSpout extends BaseRichSpout {
 	//
 	//
 	//------------------------------------------------------------------------
-
 	public TwitterSampleSpout() {		
-		this.consumerKey = "aqMhHjo25IFTlQqmT3A1YNnPVs";
-		this.consumerSecret = "bdGjNYhusZSbzLQ6695veAJG9KtkBtAHYZwwLEnfGujqGz5j987";
-		this.accessToken = "c11412092-ks3eYiWAL8SKcTAJ3SMDdAkBJss7gOHMTk2YlwPFZ";
-		this.accessTokenSecret = "diDFa3JCYbgBv3D5MZei2xdHkGdZcDEqLGJcbNx7P5fKmv";
+		this.consumerKey = "2kcgukjL3zyZOhNsAphdu2nay";
+		this.consumerSecret = "z6LtpNBkpV8G9qUQUeGb6vPZw8rGukkxjXNsnv2CZFfWpzZOW6";
+		this.accessToken = "478878681-18BkemsPrBuNQTl03tpO0Es3W7q6dFlI01dOpbgE";
+		this.accessTokenSecret = "f4oyDktAVyGldl8Bfadwx7njBY9o1K6RJjyhGWGlagSxa";
 		this.keyWords = new String[1];
 		this.keyWords[0] = "obama"; /* Filters All Tweets with word Obama */
 	}
