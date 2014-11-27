@@ -38,13 +38,15 @@ import backtype.storm.tuple.Values;
 import org.umd.assignment.spout.RandomSentenceSpout;
 import org.umd.assignment.spout.TwitterSampleSpout;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * This topology demonstrates Storm's stream groupings and multilang capabilities.
  */
 public class WordCountTopology {
+
+	private static int threadNum = 0;
+
   public static class SplitSentence extends ShellBolt implements IRichBolt {
 
     public SplitSentence() {
@@ -101,6 +103,29 @@ public class WordCountTopology {
 
     }
 
+	// code taken from http://www.mkyong.com/java/how-to-sort-a-map-in-java/
+	private static Map<String, Integer> sortByComparator(Map<String, Integer> unsortMap) {
+
+		// Convert Map to List
+		List<Map.Entry<String, Integer>> list = new LinkedList<Map.Entry<String, Integer>>(unsortMap.entrySet());
+
+		// Sort list with comparator, to compare the Map values
+		Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+			public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+				return (o2.getValue()).compareTo(o1.getValue());
+			}
+		});
+
+		// Convert sorted map back to a Map
+		Map<String, Integer> sortedMap = new LinkedHashMap<String, Integer>();
+		for (Iterator<Map.Entry<String, Integer>> it = list.iterator(); it.hasNext();) {
+			Map.Entry<String, Integer> entry = it.next();
+			sortedMap.put(entry.getKey(), entry.getValue());
+		}
+		return sortedMap;
+	}
+
+
 	@Override
 	public void cleanup()
 	{
@@ -117,10 +142,16 @@ public class WordCountTopology {
 		//  print the output (using System.out.println) and do a grep/awk/sed on that.
 		//
 		//--------------------------------------------------------------------------
-		// for (String s : count.keySet()) {
-		// 	System.out.println(s);
-		// }
-		System.out.println("Work!!!");
+		int counter = 0;
+		Map<String, Integer> sortedMap = sortByComparator(counts);
+
+		System.out.println("myoutput: Thread " + threadNum++);
+		for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
+			if (counter > 9) {
+				break;
+			}
+			System.out.println("myoutput(" + counter++ + "):\t" + entry.getKey() + " --- " + entry.getValue());
+		}
 	}
 
     @Override
@@ -171,9 +202,7 @@ public class WordCountTopology {
 	  // 	
 	  //
 	  // ----------------------------------------------------------------------
-
       Thread.sleep(10000);
-
       cluster.shutdown(); // blot "cleanup" function is called when cluster is shutdown (only works in local mode)
     }
   }

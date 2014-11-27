@@ -1,98 +1,756 @@
-Obama:  1
-Americans  1
-No  1
-Have  1
-Americans  2
-Right  1
-To  1
-Favor  1
-http://t.co/9C1Ft1D4n8  1
-@mikandynothem:  1
-RT  1
-Bean 
-Terry  1
-child  1
-rapist 
-happens  1
-aboard  1
-Air  1
-Force  1
-One  1
-Michelle  1
-Obama?  1
-Mr.  1
-Obama.  1
-@kennedigibbss  1
-#pjnet  1
-@TMZ_Politics  1
-htt…  1
-#tcot  1
-@Gawker:  1
-RT  2
-pet  1
-Cheese  1
-When  1
-dad  1
-turkey 
-Malia  1
-"Nah"  1
-http://t.c…  1
-responded  1
-Obama  1
-http://t.co/ghO4n7BhUz  1
-burning  1
-#Ferguson  1
-#Obama 
-#Holder 
-folks  1
-#Sharpton  1
-Disgusting 
-incite  1
-cops  1
-racists!  1
-racists.  1
-unacceptable 
-RT  3
-@Rockprincess818:  1
-rapist  1
-‘great  1
-Obama  2
-called  1
-supporter.’ 
-child  2
-friend  1
-ON  1
-@nbc  1
-#TerryBean  1
-http:…  1
-YOU  1
-THIS  1
-COWARDS  1
-@NPR  1
-@msnbc  1
-"I  1
-@CNN:  1
-#Ferguson  2
-RT  4
-age  1
-signifies  1
-Do  1
-Obama "
-@CornelWest  1
-said.  1
-http://t.co/ojjBdyCLgF  1
-agree?  1
-http://t.co/zJsW…  1
-RT  5
-@ShugdenLibrary:  1
-drunk  1
-Nobel  1
-Committee  1
-winners!  1
-vote  1
-#nobelpeaceprize  1
-http://t.co/neEpM6C4bo  1
-#DalaiLama  1
-#No…  1
-Explains  1
-lot!  1
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for edu.umd:streaming-project:jar:1.0
+[WARNING] 'build.plugins.plugin.version' for com.theoryinpractise:clojure-maven-plugin is missing. @ line 59, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Streaming Storm Project 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ streaming-project ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 8 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ streaming-project ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- clojure-maven-plugin:1.3.23:compile (compile) @ streaming-project ---
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.2.1:java (default-cli) @ streaming-project >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.2.1:java (default-cli) @ streaming-project <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ streaming-project ---
+5022 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.zookeeper - Starting inprocess zookeeper at port 2000 and dir /tmp/1d4e0fbd-0235-4526-9887-d64eb24d4cb0
+5364 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.nimbus - Starting Nimbus with conf {"dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.builtin.metrics.bucket.size.secs" 60, "topology.fall.back.on.java.serialization" true, "topology.max.error.report.per.interval" 5, "zmq.linger.millis" 0, "topology.skip.missing.kryo.registrations" true, "storm.messaging.netty.client_worker_threads" 1, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "topology.trident.batch.emit.interval.millis" 50, "storm.messaging.netty.flush.check.interval.ms" 10, "nimbus.monitor.freq.secs" 10, "logviewer.childopts" "-Xmx128m", "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib", "topology.executor.send.buffer.size" 1024, "storm.local.dir" "/tmp/2b8fd196-2aeb-40b5-aac4-bf0623821c9e", "storm.messaging.netty.buffer_size" 5242880, "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "drpc.worker.threads" 64, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "localhost", "storm.messaging.netty.min_wait_ms" 100, "storm.zookeeper.port" 2000, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "storm.zookeeper.retry.intervalceiling.millis" 30000, "supervisor.enable" true, "storm.messaging.netty.server_worker_threads" 1, "storm.zookeeper.servers" ["localhost"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" nil, "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "drpc.queue.size" 128, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "topology.error.throttle.interval.secs" 10, "zmq.hwm" 0, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "drpc.childopts" "-Xmx768m", "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "storm.messaging.netty.max_retries" 30, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "nimbus.thrift.max_buffer_size" 1048576, "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "nimbus.topology.validator" "backtype.storm.nimbus.DefaultTopologyValidator", "supervisor.slots.ports" [6700 6701 6702 6703], "topology.debug" false, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx256m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.tuple.serializer" "backtype.storm.serialization.types.ListDelegateSerializer", "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "topology.multilang.serializer" "backtype.storm.multilang.JsonSerializer", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "topology.kryo.factory" "backtype.storm.serialization.DefaultKryoFactory", "drpc.invocations.port" 3773, "logviewer.port" 8000, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.worker.receiver.thread.count" 1, "storm.thrift.transport" "backtype.storm.security.auth.SimpleTransportPlugin", "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "storm.messaging.transport" "backtype.storm.messaging.netty.Context", "logviewer.appender.name" "A1", "storm.messaging.netty.max_wait_ms" 1000, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "local", "topology.max.task.parallelism" nil, "storm.messaging.netty.transfer.batch.size" 262144}
+5371 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.nimbus - Using default scheduler
+5561 [org.umd.assignment.WordCountTopology.main()] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+5702 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+5704 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+5706 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  backtype.storm.zookeeper - Zookeeper state update: :connected:none
+6768 [org.umd.assignment.WordCountTopology.main()] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+6779 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+6779 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+6847 [org.umd.assignment.WordCountTopology.main()] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+6856 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+6857 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+6857 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  backtype.storm.zookeeper - Zookeeper state update: :connected:none
+7880 [org.umd.assignment.WordCountTopology.main()] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+7887 [org.umd.assignment.WordCountTopology.main()] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+7900 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] WARN  org.apache.zookeeper.server.NIOServerCnxn - caught end of stream exception
+org.apache.zookeeper.server.ServerCnxn$EndOfStreamException: Unable to read additional data from client sessionid 0x149f29e6e130002, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:220) ~[zookeeper-3.4.5.jar:3.4.5-1392090]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:208) [zookeeper-3.4.5.jar:3.4.5-1392090]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+7939 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+7939 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  backtype.storm.zookeeper - Zookeeper state update: :connected:none
+7939 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+7983 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+7984 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+7988 [org.umd.assignment.WordCountTopology.main()] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+7989 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] WARN  org.apache.zookeeper.server.NIOServerCnxn - caught end of stream exception
+org.apache.zookeeper.server.ServerCnxn$EndOfStreamException: Unable to read additional data from client sessionid 0x149f29e6e130003, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:220) ~[zookeeper-3.4.5.jar:3.4.5-1392090]
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:208) [zookeeper-3.4.5.jar:3.4.5-1392090]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+8000 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+8005 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+9024 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.supervisor - Starting Supervisor with conf {"dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.builtin.metrics.bucket.size.secs" 60, "topology.fall.back.on.java.serialization" true, "topology.max.error.report.per.interval" 5, "zmq.linger.millis" 0, "topology.skip.missing.kryo.registrations" true, "storm.messaging.netty.client_worker_threads" 1, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "topology.trident.batch.emit.interval.millis" 50, "storm.messaging.netty.flush.check.interval.ms" 10, "nimbus.monitor.freq.secs" 10, "logviewer.childopts" "-Xmx128m", "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib", "topology.executor.send.buffer.size" 1024, "storm.local.dir" "/tmp/0e6bca35-ed78-461f-b379-7fbfd0f02386", "storm.messaging.netty.buffer_size" 5242880, "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "drpc.worker.threads" 64, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "localhost", "storm.messaging.netty.min_wait_ms" 100, "storm.zookeeper.port" 2000, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "storm.zookeeper.retry.intervalceiling.millis" 30000, "supervisor.enable" true, "storm.messaging.netty.server_worker_threads" 1, "storm.zookeeper.servers" ["localhost"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" nil, "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "drpc.queue.size" 128, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "topology.error.throttle.interval.secs" 10, "zmq.hwm" 0, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "drpc.childopts" "-Xmx768m", "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "storm.messaging.netty.max_retries" 30, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "nimbus.thrift.max_buffer_size" 1048576, "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "nimbus.topology.validator" "backtype.storm.nimbus.DefaultTopologyValidator", "supervisor.slots.ports" (1024 1025 1026), "topology.debug" false, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx256m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.tuple.serializer" "backtype.storm.serialization.types.ListDelegateSerializer", "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "topology.multilang.serializer" "backtype.storm.multilang.JsonSerializer", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "topology.kryo.factory" "backtype.storm.serialization.DefaultKryoFactory", "drpc.invocations.port" 3773, "logviewer.port" 8000, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.worker.receiver.thread.count" 1, "storm.thrift.transport" "backtype.storm.security.auth.SimpleTransportPlugin", "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "storm.messaging.transport" "backtype.storm.messaging.netty.Context", "logviewer.appender.name" "A1", "storm.messaging.netty.max_wait_ms" 1000, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "local", "topology.max.task.parallelism" nil, "storm.messaging.netty.transfer.batch.size" 262144}
+9053 [org.umd.assignment.WordCountTopology.main()] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+9063 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+9063 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+9063 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  backtype.storm.zookeeper - Zookeeper state update: :connected:none
+10082 [org.umd.assignment.WordCountTopology.main()] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+10088 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+10088 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+11128 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.supervisor - Starting supervisor with id 8d1938de-5034-4b6d-9209-85af4daaf6e0 at host terrapin-VirtualBox
+11132 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.supervisor - Starting Supervisor with conf {"dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.builtin.metrics.bucket.size.secs" 60, "topology.fall.back.on.java.serialization" true, "topology.max.error.report.per.interval" 5, "zmq.linger.millis" 0, "topology.skip.missing.kryo.registrations" true, "storm.messaging.netty.client_worker_threads" 1, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "topology.trident.batch.emit.interval.millis" 50, "storm.messaging.netty.flush.check.interval.ms" 10, "nimbus.monitor.freq.secs" 10, "logviewer.childopts" "-Xmx128m", "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib", "topology.executor.send.buffer.size" 1024, "storm.local.dir" "/tmp/37311742-6777-4b62-b780-0f62469d3705", "storm.messaging.netty.buffer_size" 5242880, "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "drpc.worker.threads" 64, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "localhost", "storm.messaging.netty.min_wait_ms" 100, "storm.zookeeper.port" 2000, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "storm.zookeeper.retry.intervalceiling.millis" 30000, "supervisor.enable" true, "storm.messaging.netty.server_worker_threads" 1, "storm.zookeeper.servers" ["localhost"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" nil, "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "drpc.queue.size" 128, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "topology.error.throttle.interval.secs" 10, "zmq.hwm" 0, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "drpc.childopts" "-Xmx768m", "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "storm.messaging.netty.max_retries" 30, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "nimbus.thrift.max_buffer_size" 1048576, "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "nimbus.topology.validator" "backtype.storm.nimbus.DefaultTopologyValidator", "supervisor.slots.ports" (1027 1028 1029), "topology.debug" false, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx256m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.tuple.serializer" "backtype.storm.serialization.types.ListDelegateSerializer", "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "topology.multilang.serializer" "backtype.storm.multilang.JsonSerializer", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "topology.kryo.factory" "backtype.storm.serialization.DefaultKryoFactory", "drpc.invocations.port" 3773, "logviewer.port" 8000, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.worker.receiver.thread.count" 1, "storm.thrift.transport" "backtype.storm.security.auth.SimpleTransportPlugin", "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "storm.messaging.transport" "backtype.storm.messaging.netty.Context", "logviewer.appender.name" "A1", "storm.messaging.netty.max_wait_ms" 1000, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "local", "topology.max.task.parallelism" nil, "storm.messaging.netty.transfer.batch.size" 262144}
+11134 [org.umd.assignment.WordCountTopology.main()] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+11137 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+11137 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+11138 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  backtype.storm.zookeeper - Zookeeper state update: :connected:none
+12149 [org.umd.assignment.WordCountTopology.main()] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+12156 [org.umd.assignment.WordCountTopology.main()-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+12157 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+12168 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.supervisor - Starting supervisor with id 3937a4c5-ee94-4249-9d1f-cb5f88e00765 at host terrapin-VirtualBox
+12459 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.nimbus - Received topology submission for word-count with conf {"topology.acker.executors" nil, "topology.kryo.register" nil, "topology.kryo.decorators" (), "topology.name" "word-count", "storm.id" "word-count-1-1417114716", "topology.max.task.parallelism" 3, "topology.debug" true}
+12533 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.nimbus - Activating word-count: word-count-1-1417114716
+12660 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.scheduler.EvenScheduler - Available slots: (["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1025] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1026] ["3937a4c5-ee94-4249-9d1f-cb5f88e00765" 1027] ["3937a4c5-ee94-4249-9d1f-cb5f88e00765" 1028] ["3937a4c5-ee94-4249-9d1f-cb5f88e00765" 1029])
+12689 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.nimbus - Setting new assignment for topology id word-count-1-1417114716: #backtype.storm.daemon.common.Assignment{:master-code-dir "/tmp/2b8fd196-2aeb-40b5-aac4-bf0623821c9e/nimbus/stormdist/word-count-1-1417114716", :node->host {"8d1938de-5034-4b6d-9209-85af4daaf6e0" "terrapin-VirtualBox"}, :executor->node+port {[3 3] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [6 6] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [5 5] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [4 4] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [7 7] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [2 2] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [1 1] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [8 8] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024]}, :executor->start-time-secs {[8 8] 1417114717, [1 1] 1417114717, [2 2] 1417114717, [7 7] 1417114717, [4 4] 1417114717, [5 5] 1417114717, [6 6] 1417114717, [3 3] 1417114717}}
+12724 [Thread-3] INFO  backtype.storm.daemon.supervisor - Downloading code for storm id word-count-1-1417114716 from /tmp/2b8fd196-2aeb-40b5-aac4-bf0623821c9e/nimbus/stormdist/word-count-1-1417114716
+12732 [Thread-3] INFO  backtype.storm.daemon.supervisor - Copying resources at file:/home/terrapin/myGithub/datascience-fall14/lab8/Storm-Assignment/target/classes/resources to /tmp/0e6bca35-ed78-461f-b379-7fbfd0f02386/supervisor/stormdist/word-count-1-1417114716/resources
+12735 [Thread-3] INFO  backtype.storm.daemon.supervisor - Finished downloading code for storm id word-count-1-1417114716 from /tmp/2b8fd196-2aeb-40b5-aac4-bf0623821c9e/nimbus/stormdist/word-count-1-1417114716
+12768 [Thread-4] INFO  backtype.storm.daemon.supervisor - Launching worker with assignment #backtype.storm.daemon.supervisor.LocalAssignment{:storm-id "word-count-1-1417114716", :executors ([3 3] [6 6] [5 5] [4 4] [7 7] [2 2] [1 1] [8 8])} for this supervisor 8d1938de-5034-4b6d-9209-85af4daaf6e0 on port 1024 with id 5e79ac55-912c-4f85-9749-1092e2ab0b90
+12772 [Thread-4] INFO  backtype.storm.daemon.worker - Launching worker for word-count-1-1417114716 on 8d1938de-5034-4b6d-9209-85af4daaf6e0:1024 with id 5e79ac55-912c-4f85-9749-1092e2ab0b90 and conf {"dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.builtin.metrics.bucket.size.secs" 60, "topology.fall.back.on.java.serialization" true, "topology.max.error.report.per.interval" 5, "zmq.linger.millis" 0, "topology.skip.missing.kryo.registrations" true, "storm.messaging.netty.client_worker_threads" 1, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "topology.trident.batch.emit.interval.millis" 50, "storm.messaging.netty.flush.check.interval.ms" 10, "nimbus.monitor.freq.secs" 10, "logviewer.childopts" "-Xmx128m", "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib", "topology.executor.send.buffer.size" 1024, "storm.local.dir" "/tmp/0e6bca35-ed78-461f-b379-7fbfd0f02386", "storm.messaging.netty.buffer_size" 5242880, "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "drpc.worker.threads" 64, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "localhost", "storm.messaging.netty.min_wait_ms" 100, "storm.zookeeper.port" 2000, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "storm.zookeeper.retry.intervalceiling.millis" 30000, "supervisor.enable" true, "storm.messaging.netty.server_worker_threads" 1, "storm.zookeeper.servers" ["localhost"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" nil, "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "drpc.queue.size" 128, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "topology.error.throttle.interval.secs" 10, "zmq.hwm" 0, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "drpc.childopts" "-Xmx768m", "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "storm.messaging.netty.max_retries" 30, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "nimbus.thrift.max_buffer_size" 1048576, "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "nimbus.topology.validator" "backtype.storm.nimbus.DefaultTopologyValidator", "supervisor.slots.ports" (1024 1025 1026), "topology.debug" false, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx256m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.tuple.serializer" "backtype.storm.serialization.types.ListDelegateSerializer", "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "topology.multilang.serializer" "backtype.storm.multilang.JsonSerializer", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "topology.kryo.factory" "backtype.storm.serialization.DefaultKryoFactory", "drpc.invocations.port" 3773, "logviewer.port" 8000, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.worker.receiver.thread.count" 1, "storm.thrift.transport" "backtype.storm.security.auth.SimpleTransportPlugin", "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "storm.messaging.transport" "backtype.storm.messaging.netty.Context", "logviewer.appender.name" "A1", "storm.messaging.netty.max_wait_ms" 1000, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "local", "topology.max.task.parallelism" nil, "storm.messaging.netty.transfer.batch.size" 262144}
+12776 [Thread-4] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+12783 [Thread-4-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+12784 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+12784 [Thread-4-EventThread] INFO  backtype.storm.zookeeper - Zookeeper state update: :connected:none
+13811 [Thread-4] INFO  org.apache.curator.framework.imps.CuratorFrameworkImpl - Starting
+13826 [Thread-4-EventThread] INFO  org.apache.curator.framework.state.ConnectionStateManager - State change: CONNECTED
+13826 [ConnectionStateManager-0] WARN  org.apache.curator.framework.state.ConnectionStateManager - There are no ConnectionStateListeners registered.
+14289 [Thread-4] INFO  backtype.storm.daemon.executor - Loading executor count:[2 2]
+14299 [Thread-4] INFO  backtype.storm.daemon.task - Emitting: count __system ["startup"]
+14299 [Thread-4] INFO  backtype.storm.daemon.executor - Loaded executor tasks count:[2 2]
+14316 [Thread-8-count] INFO  backtype.storm.daemon.executor - Preparing bolt count:(2)
+14319 [Thread-4] INFO  backtype.storm.daemon.executor - Finished loading executor count:[2 2]
+14327 [Thread-4] INFO  backtype.storm.daemon.executor - Loading executor count:[3 3]
+14328 [Thread-4] INFO  backtype.storm.daemon.task - Emitting: count __system ["startup"]
+14328 [Thread-4] INFO  backtype.storm.daemon.executor - Loaded executor tasks count:[3 3]
+14332 [Thread-8-count] INFO  backtype.storm.daemon.executor - Prepared bolt count:(2)
+14334 [Thread-4] INFO  backtype.storm.daemon.executor - Finished loading executor count:[3 3]
+14342 [Thread-4] INFO  backtype.storm.daemon.executor - Loading executor count:[4 4]
+14344 [Thread-10-count] INFO  backtype.storm.daemon.executor - Preparing bolt count:(3)
+14346 [Thread-10-count] INFO  backtype.storm.daemon.executor - Prepared bolt count:(3)
+14347 [Thread-4] INFO  backtype.storm.daemon.task - Emitting: count __system ["startup"]
+14347 [Thread-4] INFO  backtype.storm.daemon.executor - Loaded executor tasks count:[4 4]
+14350 [Thread-4] INFO  backtype.storm.daemon.executor - Finished loading executor count:[4 4]
+14363 [Thread-12-count] INFO  backtype.storm.daemon.executor - Preparing bolt count:(4)
+14363 [Thread-12-count] INFO  backtype.storm.daemon.executor - Prepared bolt count:(4)
+14373 [Thread-4] INFO  backtype.storm.daemon.executor - Loading executor split:[5 5]
+14379 [Thread-4] INFO  backtype.storm.daemon.task - Emitting: split __system ["startup"]
+14379 [Thread-4] INFO  backtype.storm.daemon.executor - Loaded executor tasks split:[5 5]
+14381 [Thread-4] INFO  backtype.storm.daemon.executor - Finished loading executor split:[5 5]
+14387 [Thread-14-split] INFO  backtype.storm.daemon.executor - Preparing bolt split:(5)
+14393 [Thread-4] INFO  backtype.storm.daemon.executor - Loading executor split:[6 6]
+14400 [Thread-4] INFO  backtype.storm.daemon.task - Emitting: split __system ["startup"]
+14400 [Thread-4] INFO  backtype.storm.daemon.executor - Loaded executor tasks split:[6 6]
+14415 [Thread-14-split] INFO  backtype.storm.utils.ShellProcess - Storm multilang serializer: backtype.storm.multilang.JsonSerializer
+14417 [Thread-4] INFO  backtype.storm.daemon.executor - Finished loading executor split:[6 6]
+14420 [Thread-16-split] INFO  backtype.storm.daemon.executor - Preparing bolt split:(6)
+14420 [Thread-16-split] INFO  backtype.storm.utils.ShellProcess - Storm multilang serializer: backtype.storm.multilang.JsonSerializer
+14440 [Thread-4] INFO  backtype.storm.daemon.executor - Loading executor split:[7 7]
+14451 [Thread-4] INFO  backtype.storm.daemon.task - Emitting: split __system ["startup"]
+14452 [Thread-4] INFO  backtype.storm.daemon.executor - Loaded executor tasks split:[7 7]
+14462 [Thread-4] INFO  backtype.storm.daemon.executor - Finished loading executor split:[7 7]
+14464 [Thread-18-split] INFO  backtype.storm.daemon.executor - Preparing bolt split:(7)
+14465 [Thread-18-split] INFO  backtype.storm.utils.ShellProcess - Storm multilang serializer: backtype.storm.multilang.JsonSerializer
+14496 [Thread-4] INFO  backtype.storm.daemon.executor - Loading executor spout:[8 8]
+14500 [Thread-4] INFO  backtype.storm.daemon.task - Emitting: spout __system ["startup"]
+14500 [Thread-4] INFO  backtype.storm.daemon.executor - Loaded executor tasks spout:[8 8]
+14561 [Thread-4] INFO  backtype.storm.daemon.executor - Finished loading executor spout:[8 8]
+14561 [Thread-20-spout] INFO  backtype.storm.daemon.executor - Opening spout spout:(8)
+14585 [Thread-4] INFO  backtype.storm.daemon.executor - Loading executor __system:[-1 -1]
+14595 [Thread-4] INFO  backtype.storm.daemon.task - Emitting: __system __system ["startup"]
+14597 [Thread-4] INFO  backtype.storm.daemon.executor - Loaded executor tasks __system:[-1 -1]
+14647 [Thread-16-split] INFO  backtype.storm.task.ShellBolt - Launched subprocess with pid 8107
+14649 [Thread-4] INFO  backtype.storm.daemon.executor - Finished loading executor __system:[-1 -1]
+14655 [Thread-22-__system] INFO  backtype.storm.daemon.executor - Preparing bolt __system:(-1)
+14668 [Thread-16-split] INFO  backtype.storm.daemon.executor - Prepared bolt split:(6)
+14672 [Thread-4] INFO  backtype.storm.daemon.executor - Loading executor __acker:[1 1]
+14674 [Thread-14-split] INFO  backtype.storm.task.ShellBolt - Launched subprocess with pid 8106
+14675 [Thread-4] INFO  backtype.storm.daemon.task - Emitting: __acker __system ["startup"]
+14676 [Thread-4] INFO  backtype.storm.daemon.executor - Loaded executor tasks __acker:[1 1]
+14683 [Thread-14-split] INFO  backtype.storm.daemon.executor - Prepared bolt split:(5)
+14689 [Thread-22-__system] INFO  backtype.storm.daemon.executor - Prepared bolt __system:(-1)
+14700 [Thread-4] INFO  backtype.storm.daemon.executor - Timeouts disabled for executor __acker:[1 1]
+14701 [Thread-4] INFO  backtype.storm.daemon.executor - Finished loading executor __acker:[1 1]
+14701 [Thread-4] INFO  backtype.storm.daemon.worker - Launching receive-thread for 8d1938de-5034-4b6d-9209-85af4daaf6e0:1024
+14704 [Thread-28-__acker] INFO  backtype.storm.daemon.executor - Preparing bolt __acker:(1)
+14705 [Thread-28-__acker] INFO  backtype.storm.daemon.executor - Prepared bolt __acker:(1)
+14710 [Thread-18-split] INFO  backtype.storm.task.ShellBolt - Launched subprocess with pid 8111
+14716 [Thread-18-split] INFO  backtype.storm.daemon.executor - Prepared bolt split:(7)
+14720 [Thread-31-worker-receiver-thread-0] INFO  backtype.storm.messaging.loader - Starting receive-thread: [stormId: word-count-1-1417114716, port: 1024, thread-id: 0 ]
+14746 [Thread-4] INFO  backtype.storm.daemon.worker - Worker has topology config {"storm.id" "word-count-1-1417114716", "dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.builtin.metrics.bucket.size.secs" 60, "topology.fall.back.on.java.serialization" true, "topology.max.error.report.per.interval" 5, "zmq.linger.millis" 0, "topology.skip.missing.kryo.registrations" true, "storm.messaging.netty.client_worker_threads" 1, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "topology.trident.batch.emit.interval.millis" 50, "storm.messaging.netty.flush.check.interval.ms" 10, "nimbus.monitor.freq.secs" 10, "logviewer.childopts" "-Xmx128m", "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib", "topology.executor.send.buffer.size" 1024, "storm.local.dir" "/tmp/0e6bca35-ed78-461f-b379-7fbfd0f02386", "storm.messaging.netty.buffer_size" 5242880, "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "drpc.worker.threads" 64, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "localhost", "storm.messaging.netty.min_wait_ms" 100, "storm.zookeeper.port" 2000, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "storm.zookeeper.retry.intervalceiling.millis" 30000, "supervisor.enable" true, "storm.messaging.netty.server_worker_threads" 1, "storm.zookeeper.servers" ["localhost"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" nil, "topology.kryo.decorators" (), "topology.name" "word-count", "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "drpc.queue.size" 128, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "topology.error.throttle.interval.secs" 10, "zmq.hwm" 0, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "drpc.childopts" "-Xmx768m", "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "storm.messaging.netty.max_retries" 30, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "nimbus.thrift.max_buffer_size" 1048576, "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "nimbus.topology.validator" "backtype.storm.nimbus.DefaultTopologyValidator", "supervisor.slots.ports" (1024 1025 1026), "topology.debug" true, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.kryo.register" nil, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx256m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.tuple.serializer" "backtype.storm.serialization.types.ListDelegateSerializer", "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "topology.multilang.serializer" "backtype.storm.multilang.JsonSerializer", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "topology.kryo.factory" "backtype.storm.serialization.DefaultKryoFactory", "drpc.invocations.port" 3773, "logviewer.port" 8000, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.worker.receiver.thread.count" 1, "storm.thrift.transport" "backtype.storm.security.auth.SimpleTransportPlugin", "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "storm.messaging.transport" "backtype.storm.messaging.netty.Context", "logviewer.appender.name" "A1", "storm.messaging.netty.max_wait_ms" 1000, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "local", "topology.max.task.parallelism" 3, "storm.messaging.netty.transfer.batch.size" 262144}
+14748 [Thread-4] INFO  backtype.storm.daemon.worker - Worker 5e79ac55-912c-4f85-9749-1092e2ab0b90 for storm word-count-1-1417114716 on 8d1938de-5034-4b6d-9209-85af4daaf6e0:1024 has finished loading
+14806 [Thread-20-spout] INFO  backtype.storm.daemon.executor - Opened spout spout:(8)
+14811 [Twitter Stream consumer-1[initializing]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
+14813 [Thread-20-spout] INFO  backtype.storm.daemon.executor - Activating spout spout:(8)
+16252 [Twitter Stream consumer-1[Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Connection established.
+16252 [Twitter Stream consumer-1[Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Receiving status stream.
+16337 [Thread-20-spout] INFO  backtype.storm.daemon.task - Emitting: spout default [RT @apiontkovsky: Обама ответил на газовый шантаж Путина: западные СМИ рассказали подробности - Мир - Главред http://t.co/FTLhp3PGa7]
+16338 [Thread-14-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:8, stream: default, id: {}, [RT @apiontkovsky: Обама ответил на газовый шантаж Путина: западные СМИ рассказали подробности - Мир - Главред http://t.co/FTLhp3PGa7]
+16343 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["RT"]
+16344 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["RT"]
+16347 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["@apiontkovsky:"]
+16349 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Обама"]
+16350 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Обама"]
+16355 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["ответил"]
+16361 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["на"]
+16362 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["газовый"]
+16362 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["шантаж"]
+16363 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["шантаж"]
+16364 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Путина:"]
+16364 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["западные"]
+16365 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["СМИ"]
+16365 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["рассказали"]
+16367 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["подробности"]
+16368 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["-"]
+16381 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [RT, 1]
+16382 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Обама, 1]
+16383 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["на"]
+16384 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["@apiontkovsky:"]
+16386 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [шантаж, 1]
+16386 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Путина:"]
+16401 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [@apiontkovsky:, 1]
+16402 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [на, 1]
+16402 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["западные"]
+16409 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["ответил"]
+16412 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [Путина:, 1]
+16414 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["подробности"]
+16419 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [западные, 1]
+16420 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["рассказали"]
+16422 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Мир"]
+16423 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [ответил, 1]
+16424 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["газовый"]
+16429 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["-"]
+16430 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Главред"]
+16433 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["http:\/\/t.co\/FTLhp3PGa7"]
+16434 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [рассказали, 1]
+16436 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["-"]
+16428 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [подробности, 1]
+16437 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [-, 1]
+16437 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["-"]
+16438 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [газовый, 1]
+16443 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["СМИ"]
+16444 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [СМИ, 1]
+16445 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Мир"]
+16446 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [Мир, 1]
+16447 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [-, 2]
+16451 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Главред"]
+16452 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["http:\/\/t.co\/FTLhp3PGa7"]
+16453 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Главред, 1]
+16453 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [http://t.co/FTLhp3PGa7, 1]
+17429 [Thread-20-spout] INFO  backtype.storm.daemon.task - Emitting: spout default [RT @WhiteHouse: "On behalf of the Obama family...I want to wish you a very happy #Thanksgiving." —President Obama: http://t.co/04Fw7H2MvD]
+17430 [Thread-20-spout] INFO  backtype.storm.daemon.task - Emitting: spout default [RT @PocketHarmonies: In EUROPE We don't give a fuck about Michelle Obama (neither about Oprah) #DontPerformBOSSInTheUK]
+17430 [Thread-18-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:8, stream: default, id: {}, [RT @WhiteHouse: "On behalf of the Obama family...I want to wish you a very happy #Thanksgiving." —President Obama: http://t.co/04Fw7H2MvD]
+17431 [Thread-16-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:8, stream: default, id: {}, [RT @PocketHarmonies: In EUROPE We don't give a fuck about Michelle Obama (neither about Oprah) #DontPerformBOSSInTheUK]
+17433 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["RT"]
+17474 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["RT"]
+17477 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [RT, 2]
+17478 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["@WhiteHouse:"]
+17504 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["RT"]
+17506 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["@PocketHarmonies:"]
+17507 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["@PocketHarmonies:"]
+17509 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [@PocketHarmonies:, 1]
+17528 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["In"]
+17531 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["In"]
+17586 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["EUROPE"]
+17588 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["@WhiteHouse:"]
+17594 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["We"]
+17604 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["\"On"]
+17614 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["don't"]
+17619 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [@WhiteHouse:, 1]
+17626 [Thread-20-spout] INFO  backtype.storm.daemon.task - Emitting: spout default [RT @TeaPartyOrg: Cornel West Appears On CNN, Delivers Blunt Message About His Thoughts On The ‘Age of Obama - http://t.co/IDuMcqhVNQ #tcot]
+17634 [Thread-16-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:8, stream: default, id: {}, [RT @TeaPartyOrg: Cornel West Appears On CNN, Delivers Blunt Message About His Thoughts On The ‘Age of Obama - http://t.co/IDuMcqhVNQ #tcot]
+17647 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["give"]
+17652 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["behalf"]
+17655 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["a"]
+17658 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["of"]
+17661 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["fuck"]
+17668 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["the"]
+17668 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["about"]
+17669 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Michelle"]
+17691 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Obama"]
+17693 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["Obama"]
+17696 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["RT"]
+17699 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["(neither"]
+17700 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["family...I"]
+17701 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["want"]
+17710 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["about"]
+17715 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [RT, 3]
+17718 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["\"On"]
+17721 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["to"]
+17716 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["EUROPE"]
+17723 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [EUROPE, 1]
+17739 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Oprah)"]
+17748 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["wish"]
+17748 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["you"]
+17750 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["a"]
+17757 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["We"]
+17764 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [We, 1]
+17764 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["don't"]
+17766 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [don't, 1]
+17766 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["fuck"]
+17752 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["#DontPerformBOSSInTheUK"]
+17768 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["RT"]
+17769 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["very"]
+17777 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["@TeaPartyOrg:"]
+17778 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["happy"]
+17780 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["#Thanksgiving.\""]
+17787 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["\u2014President"]
+17789 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default ["On, 1]
+17789 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["give"]
+17790 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["a"]
+17796 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Cornel"]
+17801 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["Obama:"]
+17807 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["West"]
+17809 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Appears"]
+17811 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["http:\/\/t.co\/04Fw7H2MvD"]
+17819 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [fuck, 1]
+17819 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["about"]
+17825 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["On"]
+17825 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["(neither"]
+17829 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["CNN,"]
+17837 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Delivers"]
+17840 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [(neither, 1]
+17840 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["want"]
+17842 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["you"]
+17848 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Michelle"]
+17852 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Blunt"]
+17857 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Message"]
+17857 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [Michelle, 1]
+17857 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["about"]
+17858 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["to"]
+17860 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["wish"]
+17861 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["About"]
+17862 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["His"]
+17868 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Thoughts"]
+17872 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["On"]
+17874 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [In, 1]
+17874 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["behalf"]
+17875 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [wish, 1]
+17875 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["#DontPerformBOSSInTheUK"]
+17877 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["The"]
+17878 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["a"]
+17878 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["very"]
+17879 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["RT"]
+17880 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [RT, 4]
+17880 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["#Thanksgiving.\""]
+17882 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["\u2018Age"]
+17882 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["of"]
+17883 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Obama"]
+17884 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [behalf, 1]
+17885 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["of"]
+17886 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["-"]
+17886 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["http:\/\/t.co\/IDuMcqhVNQ"]
+17888 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["#tcot"]
+17876 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [#DontPerformBOSSInTheUK, 1]
+17891 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["@TeaPartyOrg:"]
+17903 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [@TeaPartyOrg:, 1]
+17904 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["the"]
+17906 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Obama"]
+17911 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Cornel"]
+17912 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [#Thanksgiving.", 1]
+17912 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["\u2014President"]
+17931 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [Cornel, 1]
+17931 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["West"]
+17933 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Obama, 1]
+17933 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["Obama"]
+17935 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [—President, 1]
+17936 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["http:\/\/t.co\/04Fw7H2MvD"]
+17937 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [http://t.co/04Fw7H2MvD, 1]
+17937 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Delivers"]
+17937 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [West, 1]
+17938 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Message"]
+17934 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Obama, 2]
+17942 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["family...I"]
+17943 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [Delivers, 1]
+17943 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Blunt"]
+17945 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [Blunt, 1]
+17945 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["His"]
+17946 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [His, 1]
+17946 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["The"]
+17947 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [Message, 1]
+17951 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [family...I, 1]
+17955 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Oprah)"]
+17956 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Oprah), 1]
+17956 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["happy"]
+17957 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [happy, 1]
+17957 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["Obama:"]
+17966 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Obama:, 1]
+17966 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Appears"]
+17970 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Appears, 1]
+17971 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [The, 1]
+17971 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["\u2018Age"]
+17971 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [‘Age, 1]
+17975 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["On"]
+17977 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [On, 1]
+17978 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["CNN,"]
+17990 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [CNN,, 1]
+17990 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["About"]
+17999 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [About, 1]
+18001 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Thoughts"]
+18018 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Thoughts, 1]
+18018 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["On"]
+18020 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [On, 2]
+18020 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["of"]
+18021 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Obama"]
+18030 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Obama, 3]
+18031 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["-"]
+18035 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [-, 3]
+18035 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["http:\/\/t.co\/IDuMcqhVNQ"]
+18045 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [http://t.co/IDuMcqhVNQ, 1]
+18045 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["#tcot"]
+18046 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [#tcot, 1]
+18145 [timer] INFO  backtype.storm.daemon.nimbus - Setting new assignment for topology id word-count-1-1417114716: #backtype.storm.daemon.common.Assignment{:master-code-dir "/tmp/2b8fd196-2aeb-40b5-aac4-bf0623821c9e/nimbus/stormdist/word-count-1-1417114716", :node->host {"8d1938de-5034-4b6d-9209-85af4daaf6e0" "terrapin-VirtualBox"}, :executor->node+port {[6 6] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [5 5] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [7 7] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [8 8] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [3 3] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [4 4] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [2 2] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024], [1 1] ["8d1938de-5034-4b6d-9209-85af4daaf6e0" 1024]}, :executor->start-time-secs {[8 8] 1417114722, [1 1] 1417114722, [2 2] 1417114722, [7 7] 1417114722, [4 4] 1417114722, [5 5] 1417114722, [6 6] 1417114722, [3 3] 1417114722}}
+18272 [Thread-20-spout] INFO  backtype.storm.daemon.task - Emitting: spout default [EL MITÓMANO: Obama en medio de discurso lo interrumpen y le gritan “lo que dice es mentira". Véalo video http://t.co/Opkj7BGG6T @la_iguanatv]
+18272 [Thread-18-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:8, stream: default, id: {}, [EL MITÓMANO: Obama en medio de discurso lo interrumpen y le gritan “lo que dice es mentira". Véalo video http://t.co/Opkj7BGG6T @la_iguanatv]
+18273 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["EL"]
+18276 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["EL"]
+18277 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["MITÓMANO:"]
+18278 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["Obama"]
+18278 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["Obama"]
+18280 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Obama, 4]
+18282 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["en"]
+18282 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [EL, 1]
+18282 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["MITÓMANO:"]
+18284 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["medio"]
+18282 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [MITÓMANO:, 1]
+18285 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["en"]
+18285 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [en, 1]
+18286 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["de"]
+18286 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["de"]
+18287 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [de, 1]
+18287 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["discurso"]
+18288 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["discurso"]
+18289 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["lo"]
+18290 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [discurso, 1]
+18290 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["interrumpen"]
+18290 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["y"]
+18291 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["medio"]
+18291 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["le"]
+18292 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["lo"]
+18292 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [lo, 1]
+18292 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["interrumpen"]
+18294 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["le"]
+18295 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [le, 1]
+18296 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["gritan"]
+18296 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["gritan"]
+18297 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [gritan, 1]
+18294 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [medio, 1]
+18299 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["y"]
+18297 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["\u201Clo"]
+18300 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["que"]
+18303 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [interrumpen, 1]
+18303 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["\u201Clo"]
+18305 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["dice"]
+18305 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["que"]
+18307 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [que, 1]
+18310 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [“lo, 1]
+18310 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["dice"]
+18311 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [dice, 1]
+18308 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["es"]
+18312 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["mentira\"."]
+18312 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["mentira\"."]
+18314 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [mentira"., 1]
+18314 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["Véalo"]
+18315 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["Véalo"]
+18316 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [Véalo, 1]
+18317 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["video"]
+18319 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["http:\/\/t.co\/Opkj7BGG6T"]
+18320 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["video"]
+18321 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [video, 1]
+18321 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["http:\/\/t.co\/Opkj7BGG6T"]
+18325 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["es"]
+18330 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["@la_iguanatv"]
+18337 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [http://t.co/Opkj7BGG6T, 1]
+18337 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["@la_iguanatv"]
+18339 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [@la_iguanatv, 1]
+18340 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [es, 1]
+20183 [Thread-20-spout] INFO  backtype.storm.daemon.task - Emitting: spout default [RT @SixSecSports: Obama's handshake with white guy vs. Kevin Durant 😂 | https://t.co/Iv6p7m1xFn]
+20183 [Thread-14-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:8, stream: default, id: {}, [RT @SixSecSports: Obama's handshake with white guy vs. Kevin Durant 😂 | https://t.co/Iv6p7m1xFn]
+20184 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["RT"]
+20184 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["RT"]
+20185 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [RT, 5]
+20186 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["@SixSecSports:"]
+20186 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Obama's"]
+20186 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["handshake"]
+20187 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["with"]
+20188 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["@SixSecSports:"]
+20189 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["with"]
+20190 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["white"]
+20191 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [@SixSecSports:, 1]
+20191 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Obama's"]
+20193 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [Obama's, 1]
+20193 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["handshake"]
+20194 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["guy"]
+20195 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["vs."]
+20195 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["vs."]
+20196 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [vs., 1]
+20197 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Kevin"]
+20198 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Durant"]
+20199 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Durant"]
+20201 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [Durant, 1]
+20201 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["😂"]
+20201 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["😂"]
+20202 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [😂, 1]
+20203 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["|"]
+20203 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["|"]
+20205 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [|, 1]
+20206 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["https:\/\/t.co\/Iv6p7m1xFn"]
+20208 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [handshake, 1]
+20208 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["white"]
+20216 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [white, 1]
+20217 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["guy"]
+20219 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [guy, 1]
+20219 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Kevin"]
+20221 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [Kevin, 1]
+20221 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["https:\/\/t.co\/Iv6p7m1xFn"]
+20223 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [https://t.co/Iv6p7m1xFn, 1]
+21956 [Thread-20-spout] INFO  backtype.storm.daemon.task - Emitting: spout default [RT @catoletters: A lame duck President Obama facing a Congress he hates and fears may become reckless.]
+21956 [Thread-18-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:8, stream: default, id: {}, [RT @catoletters: A lame duck President Obama facing a Congress he hates and fears may become reckless.]
+21957 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["RT"]
+21957 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["@catoletters:"]
+21958 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["A"]
+21958 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["lame"]
+21958 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["duck"]
+21958 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["President"]
+21959 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["RT"]
+21960 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [RT, 6]
+21960 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["lame"]
+21961 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [lame, 1]
+21961 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["A"]
+21962 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["Obama"]
+21962 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["@catoletters:"]
+21962 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [@catoletters:, 1]
+21963 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["duck"]
+21963 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [duck, 1]
+21964 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["President"]
+21964 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [President, 1]
+21966 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["facing"]
+21969 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["a"]
+21971 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["Congress"]
+21971 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [A, 1]
+21971 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["a"]
+21971 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["Congress"]
+21973 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["he"]
+21974 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [Congress, 1]
+21975 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["he"]
+21976 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["hates"]
+21977 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["Obama"]
+21978 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Obama, 5]
+21978 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["facing"]
+21979 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [facing, 1]
+21979 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["hates"]
+21980 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [hates, 1]
+21981 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["and"]
+21981 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["and"]
+21982 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["fears"]
+21982 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["fears"]
+21985 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [fears, 1]
+21986 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["may"]
+21989 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["become"]
+21990 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["may"]
+21991 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["become"]
+21991 [Thread-29] INFO  backtype.storm.daemon.task - Emitting: split default ["reckless."]
+21992 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:7, stream: default, id: {}, ["reckless."]
+21993 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [reckless., 1]
+22643 [Thread-20-spout] INFO  backtype.storm.daemon.task - Emitting: spout default [#GOP Conference Pushes Leadership To 'Stare #POTUS Down' Over #Obama #ExecutiveAmnesty 
+(via @DailyCaller) #Drape http://t.co/we6N2C0akk]
+22644 [Thread-14-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:8, stream: default, id: {}, [#GOP Conference Pushes Leadership To 'Stare #POTUS Down' Over #Obama #ExecutiveAmnesty 
+(via @DailyCaller) #Drape http://t.co/we6N2C0akk]
+22645 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["#GOP"]
+22645 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["#GOP"]
+22647 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [#GOP, 1]
+22647 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Conference"]
+22648 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Conference"]
+22648 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Conference, 1]
+22649 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Pushes"]
+22649 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Leadership"]
+22650 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["To"]
+22650 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Leadership"]
+22651 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Leadership, 1]
+22651 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["To"]
+22652 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["'Stare"]
+22652 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["#POTUS"]
+22652 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["#POTUS"]
+22653 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [#POTUS, 1]
+22654 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Down'"]
+22654 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Pushes"]
+22655 [Thread-20-spout] INFO  backtype.storm.daemon.task - Emitting: spout default [RT @Gawker: When asked by her dad if she would like to pet Cheese the turkey, Malia Obama responded "Nah" http://t.co/ghO4n7BhUz http://t.c…]
+22656 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["Over"]
+22657 [Thread-16-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:8, stream: default, id: {}, [RT @Gawker: When asked by her dad if she would like to pet Cheese the turkey, Malia Obama responded "Nah" http://t.co/ghO4n7BhUz http://t.c…]
+22657 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["RT"]
+22657 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["@Gawker:"]
+22658 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["When"]
+22658 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["asked"]
+22658 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["by"]
+22659 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["her"]
+22659 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["dad"]
+22659 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["if"]
+22660 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["she"]
+22660 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["she"]
+22661 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["would"]
+22674 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [To, 1]
+22674 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Down'"]
+22675 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Down', 1]
+22677 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["#Obama"]
+22678 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["#Obama"]
+22678 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [#Obama, 1]
+22679 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [Pushes, 1]
+22679 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["'Stare"]
+22688 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["@Gawker:"]
+22689 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [@Gawker:, 1]
+22689 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["When"]
+22690 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["like"]
+22691 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["to"]
+22691 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["to"]
+22691 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["pet"]
+22692 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["pet"]
+22693 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [pet, 1]
+22693 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Cheese"]
+22694 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["the"]
+22694 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["turkey,"]
+22694 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Malia"]
+22695 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [When, 1]
+22695 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["by"]
+22695 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["dad"]
+22697 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["Obama"]
+22697 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["responded"]
+22698 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["\"Nah\""]
+22698 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["http:\/\/t.co\/ghO4n7BhUz"]
+22699 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["turkey,"]
+22705 [Thread-23] INFO  backtype.storm.daemon.task - Emitting: split default ["http:\/\/t.c\u2026"]
+22707 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["#ExecutiveAmnesty"]
+22709 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["\n(via"]
+22710 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default ['Stare, 1]
+22712 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["RT"]
+22713 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [RT, 7]
+22714 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["asked"]
+22714 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["her"]
+22715 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["@DailyCaller)"]
+22716 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["#Drape"]
+22716 [Thread-25] INFO  backtype.storm.daemon.task - Emitting: split default ["http:\/\/t.co\/we6N2C0akk"]
+22695 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [dad, 1]
+22718 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["if"]
+22718 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["would"]
+22719 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [turkey,, 1]
+22724 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.nimbus - Shutting down master
+22727 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["the"]
+22720 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["\"Nah\""]
+22739 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["Over"]
+22744 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default ["Nah", 1]
+22742 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Obama"]
+22747 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [Obama, 6]
+22748 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["http:\/\/t.co\/ghO4n7BhUz"]
+22752 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.nimbus - Shut down master
+22753 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["@DailyCaller)"]
+22754 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [@DailyCaller), 1]
+22754 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["#Drape"]
+22759 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [Over, 1]
+22760 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["like"]
+22761 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [http://t.co/ghO4n7BhUz, 1]
+22761 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["#ExecutiveAmnesty"]
+22764 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Cheese"]
+22766 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.supervisor - Shutting down 8d1938de-5034-4b6d-9209-85af4daaf6e0:5e79ac55-912c-4f85-9749-1092e2ab0b90
+22766 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.process-simulator - Killing process 82f6302a-bbcc-4060-94fd-01fa149c2707
+22767 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [#Drape, 1]
+22767 [Thread-8-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["http:\/\/t.c\u2026"]
+22768 [Thread-8-count] INFO  backtype.storm.daemon.task - Emitting: count default [http://t.c…, 1]
+22768 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Shutting down worker word-count-1-1417114716 8d1938de-5034-4b6d-9209-85af4daaf6e0 1024
+22768 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Shutting down receive thread
+22768 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.messaging.loader - Shutting down receiving-thread: [word-count-1-1417114716, 1024]
+22770 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [#ExecutiveAmnesty, 1]
+22770 [Thread-31-worker-receiver-thread-0] INFO  backtype.storm.messaging.loader - Receiving-thread:[word-count-1-1417114716, 1024] received shutdown notice
+22771 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.messaging.loader - Waiting for receiving-thread:[word-count-1-1417114716, 1024] to die
+22775 [Thread-10-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["http:\/\/t.co\/we6N2C0akk"]
+22772 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [Cheese, 1]
+22776 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["Malia"]
+22778 [Thread-10-count] INFO  backtype.storm.daemon.task - Emitting: count default [http://t.co/we6N2C0akk, 1]
+22778 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [Malia, 1]
+22778 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:6, stream: default, id: {}, ["responded"]
+22778 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.messaging.loader - Shutdown receiving-thread: [word-count-1-1417114716, 1024]
+22778 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Shut down receive thread
+22778 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Terminating messaging context
+22778 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Shutting down executors
+22779 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shutting down executor count:[2 2]
+22781 [Thread-8-count] INFO  backtype.storm.util - Async loop interrupted!
+22782 [Thread-7-disruptor-executor[2 2]-send-queue] INFO  backtype.storm.util - Async loop interrupted!
+22783 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [responded, 1]
+22784 [Thread-12-count] INFO  backtype.storm.daemon.executor - Processing received message source: split:5, stream: default, id: {}, ["\n(via"]
+22785 [Thread-12-count] INFO  backtype.storm.daemon.task - Emitting: count default [
+(via, 1]
+myoutput: Thread 0
+myoutput(0):	@la_iguanatv --- 1
+myoutput(1):	A --- 1
+myoutput(2):	wish --- 1
+myoutput(3):	West --- 1
+myoutput(4):	Michelle --- 1
+myoutput(5):	#DontPerformBOSSInTheUK --- 1
+myoutput(6):	Путина: --- 1
+myoutput(7):	@TeaPartyOrg: --- 1
+myoutput(8):	turkey, --- 1
+myoutput(9):	Véalo --- 1
+22786 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shut down executor count:[2 2]
+22786 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shutting down executor count:[3 3]
+22786 [Thread-10-count] INFO  backtype.storm.util - Async loop interrupted!
+22787 [Thread-9-disruptor-executor[3 3]-send-queue] INFO  backtype.storm.util - Async loop interrupted!
+myoutput: Thread 1
+myoutput(0):	Obama --- 6
+myoutput(1):	- --- 3
+myoutput(2):	On --- 2
+myoutput(3):	😂 --- 1
+myoutput(4):	Oprah) --- 1
+myoutput(5):	behalf --- 1
+myoutput(6):	lo --- 1
+myoutput(7):	http://t.co/we6N2C0akk --- 1
+myoutput(8):	западные --- 1
+myoutput(9):	@catoletters: --- 1
+22787 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shut down executor count:[3 3]
+22787 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shutting down executor count:[4 4]
+22787 [Thread-12-count] INFO  backtype.storm.util - Async loop interrupted!
+22788 [Thread-11-disruptor-executor[4 4]-send-queue] INFO  backtype.storm.util - Async loop interrupted!
+myoutput: Thread 2
+myoutput(0):	RT --- 7
+myoutput(1):	газовый --- 1
+myoutput(2):	Malia --- 1
+myoutput(3):	@WhiteHouse: --- 1
+myoutput(4):	http://t.co/FTLhp3PGa7 --- 1
+myoutput(5):	'Stare --- 1
+myoutput(6):	#Thanksgiving." --- 1
+myoutput(7):	Cheese --- 1
+myoutput(8):	The --- 1
+myoutput(9):	reckless. --- 1
+22788 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shut down executor count:[4 4]
+22788 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shutting down executor split:[5 5]
+22788 [Thread-14-split] INFO  backtype.storm.util - Async loop interrupted!
+22789 [Thread-13-disruptor-executor[5 5]-send-queue] INFO  backtype.storm.util - Async loop interrupted!
+22791 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shut down executor split:[5 5]
+22792 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shutting down executor split:[6 6]
+22792 [Thread-16-split] INFO  backtype.storm.util - Async loop interrupted!
+22792 [Thread-15-disruptor-executor[6 6]-send-queue] INFO  backtype.storm.util - Async loop interrupted!
+22793 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shut down executor split:[6 6]
+22793 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shutting down executor split:[7 7]
+22793 [Thread-18-split] INFO  backtype.storm.util - Async loop interrupted!
+22793 [Thread-17-disruptor-executor[7 7]-send-queue] INFO  backtype.storm.util - Async loop interrupted!
+22795 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shut down executor split:[7 7]
+22795 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shutting down executor spout:[8 8]
+22796 [Thread-19-disruptor-executor[8 8]-send-queue] INFO  backtype.storm.util - Async loop interrupted!
+22796 [Thread-20-spout] INFO  backtype.storm.util - Async loop interrupted!
+23156 [Twitter Stream consumer-1[Disposing thread]] INFO  twitter4j.TwitterStreamImpl - Inflater has been closed
+23163 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shut down executor spout:[8 8]
+23163 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shutting down executor __system:[-1 -1]
+23164 [Thread-22-__system] INFO  backtype.storm.util - Async loop interrupted!
+23164 [Thread-21-disruptor-executor[-1 -1]-send-queue] INFO  backtype.storm.util - Async loop interrupted!
+23166 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shut down executor __system:[-1 -1]
+23166 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shutting down executor __acker:[1 1]
+23166 [Thread-28-__acker] INFO  backtype.storm.util - Async loop interrupted!
+23166 [Thread-27-disruptor-executor[1 1]-send-queue] INFO  backtype.storm.util - Async loop interrupted!
+23168 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.executor - Shut down executor __acker:[1 1]
+23168 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Shut down executors
+23168 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Shutting down transfer thread
+23168 [Thread-32-disruptor-worker-transfer-queue] INFO  backtype.storm.util - Async loop interrupted!
+23168 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Shut down transfer thread
+23169 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Shutting down default resources
+23170 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Shut down default resources
+23238 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Disconnecting from storm cluster state context
+23242 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.worker - Shut down worker word-count-1-1417114716 8d1938de-5034-4b6d-9209-85af4daaf6e0 1024
+23258 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.util - Error when trying to kill 8106. Process is probably already dead.
+23265 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.util - Error when trying to kill 8107. Process is probably already dead.
+23270 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.util - Error when trying to kill 8111. Process is probably already dead.
+23274 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.supervisor - Shut down 8d1938de-5034-4b6d-9209-85af4daaf6e0:5e79ac55-912c-4f85-9749-1092e2ab0b90
+23274 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.supervisor - Shutting down supervisor 8d1938de-5034-4b6d-9209-85af4daaf6e0
+23276 [Thread-3] INFO  backtype.storm.event - Event manager interrupted
+23277 [Thread-4] INFO  backtype.storm.event - Event manager interrupted
+23282 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.daemon.supervisor - Shutting down supervisor 3937a4c5-ee94-4249-9d1f-cb5f88e00765
+23283 [Thread-5] INFO  backtype.storm.event - Event manager interrupted
+23283 [Thread-6] INFO  backtype.storm.event - Event manager interrupted
+23291 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.testing - Shutting down in process zookeeper
+23293 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.testing - Done shutting down in process zookeeper
+23293 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.testing - Deleting temporary path /tmp/2b8fd196-2aeb-40b5-aac4-bf0623821c9e
+23296 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.testing - Deleting temporary path /tmp/1d4e0fbd-0235-4526-9887-d64eb24d4cb0
+23297 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.testing - Deleting temporary path /tmp/0e6bca35-ed78-461f-b379-7fbfd0f02386
+23301 [org.umd.assignment.WordCountTopology.main()] INFO  backtype.storm.testing - Deleting temporary path /tmp/37311742-6777-4b62-b780-0f62469d3705
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 28.585s
+[INFO] Finished at: Thu Nov 27 13:58:48 EST 2014
+[INFO] Final Memory: 19M/46M
+[INFO] ------------------------------------------------------------------------
