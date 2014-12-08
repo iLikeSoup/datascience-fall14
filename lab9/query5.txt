@@ -1,0 +1,7 @@
+match (s1:State)-[:BORDERS]->(bs1:State {name: "California"})
+match (s2:State)-[:BORDERS]->(s1)
+where s2.name <> "California"
+return distinct s2.name, s1.name
+
+match (s3:State)-[:BORDERS]->(s2)
+return distinct s3.name
