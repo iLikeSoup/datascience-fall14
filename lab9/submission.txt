@@ -1,9 +1,28 @@
 ===================== Neo4j Question 1
 match (people:Person) where people.born = 1964 return people
 
+Output:
+name	Keanu Reeves
+born	1964
+name	Keanu Reeves
+born	1964
+
 ===================== Neo4j Question 2
 MATCH (will:Person {name:"Wil Wheaton"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(coActors) RETURN coActors.name
 
+Output:
+Marshall Bell
+Kiefer Sutherland
+John Cusack
+Corey Feldman
+Jerry O'Connell
+River Phoenix
+River Phoenix
+Jerry O'Connell
+Corey Feldman
+John Cusack
+Kiefer Sutherland
+Marshall
 
 ===================== Neo4j Question 3
 CREATE (s1L:State {name:'Alabama'}),
@@ -274,17 +293,42 @@ CREATE (s1L:State {name:'Alabama'}),
 (s49L)-[:BORDERS {dist: 137.7}]->(s40L),
 (s49L)-[:BORDERS {dist: 173.1}]->(s43L)
 
-
+Output:
+Added 49 labels, created 49 nodes, set 267 properties, created 218 relationships, returned 0 rows in 13366 ms
 
 ===================== Neo4j Question 4
 match (state:State)-[:BORDERS]->(bs1:State {name: "Colorado"})
 match state-[:BORDERS]->(bs2:State {name: "Arizona"})
 return distinct state.name
 
+Output:
+New Mexico
+Utah
 
 ===================== Neo4j Question 5
+match (s1:State)-[:BORDERS]->(bs1:State {name: "California"})
+match (s2:State)-[:BORDERS]->(s1)
+where s2.name <> "California"
+match (s3:State)-[:BORDERS]->(s2)
+return distinct s3.name
 
 
+Output:
+Wyoming
+New Mexico
+Nevada
+Idaho
+Colorado
+Arizona
+Utah
+Texas
+Oklahoma
+Oregon
+California
+Nebraska
+Kansas
+Washington
+Montana
 
 ===================== GraphX Question 1
 
