@@ -336,9 +336,17 @@ Montana
 
 
 ===================== GraphX Question 2
+val olderUsers = graph.subgraph(vpred = (id, attr) => attr._2 > 30)
+val cc = olderUsers.connectedComponents
+olderUsers.vertices.leftJoin(cc.vertices) {
+  case (id, user, comp) => s"${user._1} is in component ${comp.get}"
+}.collect.foreach{ case (id, str) => println(str) }
 
-
-
+Output:
+David is in component 4
+Fran is in component 3
+Charlie is in component 3
+Ed is in component 3
 
 ===================== GraphX Question 3
 
